@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Mail, Instagram, Youtube, Facebook, Send, Check } from 'lucide-react';
+import { Mail, Instagram, Facebook, Send, Check, MessageSquare, Users, Calendar } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -22,24 +23,102 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-neutral-900 pb-12 mb-12">
           {/* Column 1: Info and Wordmark */}
           <div className="md:col-span-2 space-y-4">
-            <div className="flex items-center space-x-2">
-              <span className="font-extrabold tracking-[0.25em] text-sm uppercase text-white font-sans">
-                THE MOTO SOCIAL
+            <div className="flex items-center space-x-3">
+              <div className="h-8 w-8 overflow-hidden">
+                <img 
+                  src={logoImg} 
+                  alt="Shiny Side Connects logo" 
+                  className="h-full w-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <span className="font-extrabold tracking-[0.2em] text-sm uppercase text-white font-sans">
+                SHINY SIDE CONNECTS
               </span>
             </div>
             <p className="text-neutral-400 text-xs leading-relaxed max-w-sm font-light">
               We’re a monthly community building event. Everyone is welcome. Motorcycles are just the excuse to gather. Egos stay home. Bring whatever gets you moving.
             </p>
-            <div className="flex space-x-3 pt-2">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="p-2 border border-neutral-800 hover:border-white text-neutral-400 hover:text-white transition-colors" aria-label="Instagram">
-                <Instagram size={14} />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="p-2 border border-neutral-800 hover:border-white text-neutral-400 hover:text-white transition-colors" aria-label="YouTube">
-                <Youtube size={14} />
-              </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="p-2 border border-neutral-800 hover:border-white text-neutral-400 hover:text-white transition-colors" aria-label="Facebook">
-                <Facebook size={14} />
-              </a>
+            <div className="flex flex-wrap gap-3 pt-2">
+              {/* Discord */}
+              <div className="relative group">
+                <a 
+                  href="https://discord.com/invite/SZSFBmzA" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 border border-neutral-800 hover:border-white text-neutral-400 hover:text-white transition-all duration-200 flex items-center justify-center bg-neutral-950 hover:bg-neutral-900" 
+                  aria-label="Discord"
+                >
+                  <MessageSquare size={16} />
+                </a>
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-[9px] font-mono tracking-wider uppercase text-white bg-neutral-900 border border-neutral-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl">
+                  Discord
+                </span>
+              </div>
+
+              {/* Instagram */}
+              <div className="relative group">
+                <a 
+                  href="https://www.instagram.com/shinysideconnects/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 border border-neutral-800 hover:border-white text-neutral-400 hover:text-white transition-all duration-200 flex items-center justify-center bg-neutral-950 hover:bg-neutral-900" 
+                  aria-label="Instagram"
+                >
+                  <Instagram size={16} />
+                </a>
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-[9px] font-mono tracking-wider uppercase text-white bg-neutral-900 border border-neutral-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl">
+                  Instagram
+                </span>
+              </div>
+
+              {/* Facebook Page */}
+              <div className="relative group">
+                <a 
+                  href="https://www.facebook.com/shinysideconnects/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 border border-neutral-800 hover:border-white text-neutral-400 hover:text-white transition-all duration-200 flex items-center justify-center bg-neutral-950 hover:bg-neutral-900" 
+                  aria-label="Facebook Page"
+                >
+                  <Facebook size={16} />
+                </a>
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-[9px] font-mono tracking-wider uppercase text-white bg-neutral-900 border border-neutral-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl">
+                  Facebook Page
+                </span>
+              </div>
+
+              {/* Facebook Group */}
+              <div className="relative group">
+                <a 
+                  href="https://www.facebook.com/groups/5234400616773955" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 border border-neutral-800 hover:border-white text-neutral-400 hover:text-white transition-all duration-200 flex items-center justify-center bg-neutral-950 hover:bg-neutral-900" 
+                  aria-label="Facebook Group"
+                >
+                  <Users size={16} />
+                </a>
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-[9px] font-mono tracking-wider uppercase text-white bg-neutral-900 border border-neutral-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl">
+                  Facebook Group
+                </span>
+              </div>
+
+              {/* Event Page */}
+              <div className="relative group">
+                <a 
+                  href="https://www.facebook.com/events/2487325615114760/?rdid=YWaDxWmheU8WkTXG&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1F5ZwGBs7A%2F#" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-3 border border-white/20 bg-white/[0.03] hover:bg-white text-white hover:text-black transition-all duration-200 flex items-center justify-center" 
+                  aria-label="Event Invite"
+                >
+                  <Calendar size={16} />
+                </a>
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2.5 py-1 text-[9px] font-mono tracking-wider uppercase text-white bg-neutral-900 border border-neutral-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-xl">
+                  Event Info
+                </span>
+              </div>
             </div>
           </div>
 
@@ -90,7 +169,7 @@ export default function Footer() {
 
         {/* Bottom copyright items */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-500 font-light space-y-4 sm:space-y-0">
-          <p>© {new Date().getFullYear()} The Moto Social. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Shiny Side Connects. All rights reserved.</p>
           <div className="flex space-x-6">
             <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
             <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>

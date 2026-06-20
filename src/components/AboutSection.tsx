@@ -1,9 +1,6 @@
-import { useState } from 'react';
-import { TIMELINE_STORIES } from '../data';
-import { HelpCircle, Star, Heart, ShieldAlert } from 'lucide-react';
+import { Star, Heart, ShieldAlert, Sparkles, Globe } from 'lucide-react';
 
 export default function AboutSection() {
-  const [activeYearIndex, setActiveYearIndex] = useState(0);
 
   // Use the exact generated image path
   const communityImageUrl = '/src/assets/images/community_laughing_1781624034619.jpg';
@@ -17,7 +14,7 @@ export default function AboutSection() {
     {
       icon: <Star size={20} className="text-black" />,
       titleName: "No Attitudes, Ever",
-      textDetail: "The motorcycle world can sometimes feel exclusionary. The Moto Social is the absolute opposite. It is designed from day one to be warm, safe, simple, and incredibly welcoming."
+      textDetail: "The motorcycle world can sometimes feel exclusionary. Shiny Side Connects is the absolute opposite. It is designed from day one to be warm, safe, simple, and incredibly welcoming."
     },
     {
       icon: <ShieldAlert size={20} className="text-black" />,
@@ -99,47 +96,69 @@ export default function AboutSection() {
 
         </div>
 
-        {/* Dynamic Story Timeline block */}
-        <div className="bg-white border border-neutral-200/60 p-8 md:p-12 shadow-sm mb-20 relative">
-          <div className="max-w-2xl mb-8">
-            <span className="text-[10px] bg-black text-white font-extrabold uppercase tracking-widest px-2.5 py-1">Timeline</span>
-            <h3 className="font-serif text-2xl text-neutral-950 mt-3 tracking-tight">Interactive Community Evolution</h3>
-            <p className="text-xs text-neutral-500 font-light mt-1">Select a key milestone year below to explore how the movement expanded organically.</p>
+        {/* Bike Night Season Opener Event Announcement Block */}
+        <div id="bike-night-opener" className="bg-neutral-950 text-white shadow-xl mb-20 relative overflow-hidden border border-neutral-800 flex flex-col">
+          {/* Banner Image from Google Drive */}
+          <div className="relative h-64 sm:h-80 md:h-[380px] w-full overflow-hidden select-none">
+            <img 
+              src="https://drive.google.com/thumbnail?id=1yT9dCV1yWIHy-n1SD1g2vphlPNb-1uY9&sz=w1600" 
+              alt="Shiny Side Connects Australia Road Ride" 
+              className="w-full h-full object-cover opacity-85 transition-transform duration-700 hover:scale-105"
+              referrerPolicy="no-referrer"
+            />
+            {/* Elegant glassmorphism gradient overlays */}
+            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:border-b border-neutral-100 pb-6 mb-6">
-            {TIMELINE_STORIES.map((story, idx) => (
-              <button
-                key={story.year}
-                onClick={() => setActiveYearIndex(idx)}
-                className={`text-left p-4 border transition-all relative ${
-                  activeYearIndex === idx
-                    ? 'bg-black border-black text-white'
-                    : 'bg-neutral-50 border-neutral-200 hover:border-neutral-400 text-neutral-700'
-                }`}
-              >
-                <p className="text-lg font-bold font-mono">{story.year}</p>
-                <p className="text-xs font-bold uppercase tracking-wider mt-1 truncate">{story.title}</p>
-                {activeYearIndex === idx && (
-                  <span className="hidden md:block absolute -bottom-8 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-black"></span>
-                )}
-              </button>
-            ))}
-          </div>
+          <div className="p-8 md:p-12 relative z-10">
+            {/* Subtle background graphics */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.01] rounded-full -mr-20 -mt-20 pointer-events-none"></div>
+            
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-7 space-y-6">
+              <span className="text-[10px] bg-white text-black font-extrabold uppercase tracking-[0.2em] px-3 py-1 inline-flex items-center gap-1">
+                <Sparkles size={10} className="fill-black text-black" />
+                Offline Event Announcement
+              </span>
+              <h3 className="font-serif text-3xl sm:text-4xl tracking-tight text-white leading-tight">
+                Bike Night season opener
+              </h3>
+              <p className="text-neutral-400 text-sm leading-relaxed font-light max-w-xl">
+                Get ready for the first community gathering in Edmonton! We are hosting our highly anticipated season opener, bringing custom moto builders, scooter riders, vintage collectors, and local espresso lovers together side-by-side. Like always, zero pressure and all smiles.
+              </p>
+              
 
-          {/* Expanded story */}
-          <div className="min-h-[100px] bg-neutral-50 p-6 border border-neutral-100 flex flex-col justify-center animate-in fade-in duration-200">
-            <p className="text-[11px] font-extrabold text-neutral-400 uppercase tracking-widest mb-1.5">
-              Reflections on {TIMELINE_STORIES[activeYearIndex].year}
-            </p>
-            <h4 className="font-serif text-lg text-neutral-900 font-semibold mb-2">
-              {TIMELINE_STORIES[activeYearIndex].title}
-            </h4>
-            <p className="text-neutral-600 text-sm leading-relaxed font-light">
-              {TIMELINE_STORIES[activeYearIndex].description}
-            </p>
+            </div>
+
+            <div className="lg:col-span-5 bg-white/[0.03] border border-white/10 p-6 space-y-4">
+              <div className="flex items-center gap-2">
+                <Globe size={18} className="text-white shrink-0" />
+                <p className="font-serif text-lg font-semibold text-white">Event Location</p>
+              </div>
+              <div className="space-y-1">
+                <p className="text-xs text-white font-semibold">StorageMart</p>
+                <p className="text-xs text-neutral-300 font-light leading-relaxed">
+                  13303 Fort Rd NW, <br />
+                  Edmonton, AB T5A 1C3, Canada
+                </p>
+              </div>
+              <p className="text-xs text-neutral-400 font-light leading-relaxed">
+                Join our welcoming community crowd. Drive, ride, or simply walk over on foot to find warm conversations and beautiful machines on display.
+              </p>
+              <div className="pt-2">
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=StorageMart+13303+Fort+Rd+NW+Edmonton+AB+T5A+1C3+Canada"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center block bg-white text-black hover:bg-neutral-100 py-3 text-[11px] font-extrabold uppercase tracking-widest transition-all cursor-pointer font-mono shadow"
+                >
+                  Get Directions in Maps
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
 
         {/* Detailed creed items */}
         <div className="space-y-6">

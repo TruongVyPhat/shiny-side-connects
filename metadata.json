@@ -1,5 +1,5 @@
 {
-  "name": "The Moto Social",
+  "name": "Shiny Side Connects",
   "description": "A monthly motorcycle community building event for everyone. Connecting people, coffee, and motorcycles in cities worldwide.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

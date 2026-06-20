@@ -5,19 +5,26 @@ interface HeroProps {
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
-  // Use the exact generated image path
+  // Use the exact generated image path as a fallback/poster image
   const heroImageUrl = '/src/assets/images/hero_motorcycles_1781624019427.jpg';
+
+  // ==========================================
+  // 🎥 HERO BACKGROUND VIDEO CONFIGURATION
+  // Replace the YouTube Video ID 'gW7O8f8U82s' in the src below with your custom YouTube video ID when ready!
+  // ==========================================
+  const youtubeVideoId = "gW7O8f8U82s"; // Scenic aesthetic motorcycle ride / community vlog
 
   return (
     <section className="bg-white text-black font-sans">
       {/* Visual Header */}
       <div className="relative overflow-hidden bg-neutral-900 border-b border-neutral-100">
-        <div className="absolute inset-0">
-          <img
-            src={heroImageUrl}
-            alt="The Moto Social Motorcycle Community Event"
-            className="w-full h-full object-cover opacity-45 scale-105 animate-pulse-slow object-center"
-            referrerPolicy="no-referrer"
+        <div className="absolute inset-0 select-none pointer-events-none">
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&mute=1&loop=1&playlist=${youtubeVideoId}&controls=0&showinfo=0&rel=0&playsinline=1&modestbranding=1&iv_load_policy=3&disablekb=1`}
+            title="Shiny Side Connects Background Clip"
+            className="absolute top-1/2 left-1/2 w-[115%] h-[115%] min-w-full min-h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none object-cover opacity-45 scale-110"
+            allow="autoplay; encrypted-media"
+            frameBorder="0"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-neutral-900/60 to-transparent"></div>
         </div>
@@ -27,7 +34,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 border border-white/20">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-                Upcoming Season • July 2026
+                Upcoming Season • Summer 2026
               </span>
             </div>
 
@@ -37,15 +44,15 @@ export default function Hero({ onNavigate }: HeroProps) {
             </h1>
 
             <p className="text-neutral-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl font-sans font-light">
-              We’re a monthly community building event. No attitudes. Just friendly people, warm coffee, and amazing machines on city streets worldwide.
+              We’re a community building event. No attitudes. Just friendly people, warm coffee, and amazing machines on local streets.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
               <button
-                onClick={() => onNavigate('cities')}
+                onClick={() => onNavigate('bike-night-opener')}
                 className="bg-white text-black hover:bg-neutral-100 px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center space-x-2 rounded-none group shadow-lg"
               >
-                <span>Find Your City</span>
+                <span>Season Opener Info</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button

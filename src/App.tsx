@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
-import CitiesSection from './components/CitiesSection';
+import SponsorsSection from './components/SponsorsSection';
 import HostSection from './components/HostSection';
 import Footer from './components/Footer';
 
@@ -21,7 +21,7 @@ export default function App() {
   // Update active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'cities', 'host'];
+      const sections = ['hero', 'about', 'collaborator', 'sponsors'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -67,12 +67,12 @@ export default function App() {
           <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-neutral-400 block mt-3">— THE MANIFESTO</span>
         </div>
 
-        <div id="cities">
-          <CitiesSection />
+        <div id="collaborator">
+          <HostSection />
         </div>
 
-        <div id="host">
-          <HostSection />
+        <div id="sponsors">
+          <SponsorsSection />
         </div>
       </main>
 

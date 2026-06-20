@@ -159,7 +159,7 @@ export const CITIES_DATA: City[] = [
 export const MERCH_DATA: MerchItem[] = [
   {
     id: 'tms-tee-black',
-    name: 'The Moto Social Signature Tee',
+    name: 'Shiny Side Connects Signature Tee',
     price: 36,
     description: 'Our iconic signature t-shirt. Premium weight vintage wash black cotton with crisp white screen-printed chest block typography. Proudly built for comfort on long rides.',
     imageUrl: '/src/assets/images/merch_tee_1781624051226.jpg',
@@ -191,7 +191,7 @@ export const MERCH_DATA: MerchItem[] = [
     id: 'tms-keychain-leather',
     name: 'Tan Leather Riding fob',
     price: 18,
-    description: 'Genuine cowhide oil-tanned leather strip with solid brass split-ring. Embossed with the Moto Social insignia. Handcrafted in Toronto.',
+    description: 'Genuine cowhide oil-tanned leather strip with solid brass split-ring. Embossed with the Shiny Side Connects insignia. Handcrafted in Toronto.',
     imageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=400&auto=format&fit=crop', // leather fob
     sizes: ['One Size'],
     category: 'Accessories',
@@ -247,7 +247,7 @@ export const TIMELINE_STORIES = [
   {
     year: '2015',
     title: 'Spreading the Vibe',
-    description: 'Word of mouth spread. Riders in Montréal, Vancouver, and Ottawa reached out wanting the same open-concept platform. The Moto Social officially expanded beyond local borders.'
+    description: 'Word of mouth spread. Riders in Montréal, Vancouver, and Ottawa reached out wanting the same open-concept platform. Shiny Side Connects officially expanded beyond local borders.'
   },
   {
     year: '2018',
