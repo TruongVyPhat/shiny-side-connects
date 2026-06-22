@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logoImg from '../assets/logo.png';
+
+const logoImg = "https://drive.google.com/thumbnail?id=1NfDnf2BbZdelg_ALX0npN_4ZV86H9vv1&sz=w400";
 
 interface NavbarProps {
   activeSection: string;

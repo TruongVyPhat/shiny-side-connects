@@ -102,19 +102,19 @@ export default function HostSection() {
   ];
 
   return (
-    <section className="bg-neutral-50 py-20 px-4 sm:px-6 lg:px-8 font-sans border-b border-neutral-100">
+    <section className="bg-neutral-50 py-24 px-4 sm:px-6 lg:px-8 font-sans border-b border-neutral-100">
       <div className="max-w-7xl mx-auto space-y-20">
         
         {/* Simplified Header Block */}
-        <div className="text-center max-w-3xl mx-auto space-y-6">
-          <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-neutral-400 block">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <span className="text-xs sm:text-sm font-semibold font-mono uppercase tracking-[0.25em] text-neutral-400 block">
             Our Global Circle
           </span>
-          <h2 className="text-4xl sm:text-5xl font-serif tracking-tight text-neutral-950">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-neutral-950">
             Meet The Collaborators
           </h2>
-          <div className="h-0.5 w-12 bg-black mx-auto mt-2"></div>
-          <p className="text-neutral-600 text-sm leading-relaxed max-w-xl mx-auto font-light">
+          <div className="h-0.5 w-16 bg-black mx-auto mt-3"></div>
+          <p className="text-neutral-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto font-light">
             Shiny Side Connects is made possible by welcoming coordinators, photographers, and hospitable minds worldwide. Meet the 9 central collaborators who host monthly sidewalk espresso gatherings, build warm spaces, and keep egos out of the loop.
           </p>
         </div>

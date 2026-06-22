@@ -42,19 +42,19 @@ export default function SponsorsSection() {
   ];
 
   return (
-    <section id="sponsors" className="bg-white py-20 px-4 sm:px-6 lg:px-8 font-sans border-b border-neutral-100">
+    <section id="sponsors" className="bg-white py-24 px-4 sm:px-6 lg:px-8 font-sans border-b border-neutral-100">
       <div className="max-w-7xl mx-auto space-y-16">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-neutral-400 block">
+          <span className="text-xs sm:text-sm font-semibold font-mono uppercase tracking-[0.25em] text-neutral-400 block">
             Backed By Genuine Brands
           </span>
-          <h2 className="text-4xl font-serif tracking-tight text-neutral-950">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-neutral-950">
             Our Proud Sponsors
           </h2>
-          <div className="h-0.5 w-12 bg-black mx-auto mt-2"></div>
-          <p className="text-neutral-500 text-sm leading-relaxed max-w-xl mx-auto font-light">
+          <div className="h-0.5 w-16 bg-black mx-auto mt-3"></div>
+          <p className="text-neutral-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-light">
             We partner with progressive brands who believe in our absolute core values: inclusion, genuine warmth, and premium offline coffee hospitality.
           </p>
         </div>
