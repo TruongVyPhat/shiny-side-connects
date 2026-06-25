@@ -16,8 +16,9 @@ export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: 
   const navItems = [
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
-    { id: 'collaborator', label: 'Collaborators' },
+    { id: 'events', label: 'Events' },
     { id: 'sponsors', label: 'Sponsors' },
+    { id: 'collaborator', label: 'Collaborators' },
   ];
 
   const handleNavClick = (id: string) => {

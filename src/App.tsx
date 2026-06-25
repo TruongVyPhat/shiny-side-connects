@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
+import EventsSection from './components/EventsSection';
 import SponsorsSection from './components/SponsorsSection';
 import HostSection from './components/HostSection';
+import ManifestoSection from './components/ManifestoSection';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -21,7 +23,7 @@ export default function App() {
   // Update active section on scroll
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'about', 'collaborator', 'sponsors'];
+      const sections = ['hero', 'about', 'events', 'sponsors', 'collaborator'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -59,20 +61,18 @@ export default function App() {
           <AboutSection />
         </div>
 
-        {/* Dynamic transition block */}
-        <div className="bg-black text-white text-center py-16 px-4">
-          <p className="font-serif italic text-2xl max-w-2xl mx-auto leading-relaxed font-light">
-            "We don't care what you ride. We care who you are. The motorcycle is simply the vehicle that parks us on the same sidewalk."
-          </p>
-          <span className="text-[10px] uppercase font-bold tracking-[0.25em] text-neutral-400 block mt-3">— THE MANIFESTO</span>
-        </div>
-
-        <div id="collaborator">
-          <HostSection />
+        <div id="events">
+          <EventsSection />
         </div>
 
         <div id="sponsors">
           <SponsorsSection />
+        </div>
+
+        <ManifestoSection />
+
+        <div id="collaborator">
+          <HostSection />
         </div>
       </main>
 
