@@ -6,6 +6,7 @@ import EventsSection from './components/EventsSection';
 import SponsorsSection from './components/SponsorsSection';
 import HostSection from './components/HostSection';
 import ManifestoSection from './components/ManifestoSection';
+import FloatingCalendar from './components/FloatingCalendar';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -78,6 +79,9 @@ export default function App() {
 
       {/* Footer block */}
       <Footer />
+
+      {/* Floating Action Event Calendar */}
+      <FloatingCalendar />
     </div>
   );
 }
