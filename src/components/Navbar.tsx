@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import siteText from '../siteText.json';
-
-const logoImg = "https://drive.google.com/thumbnail?id=1NfDnf2BbZdelg_ALX0npN_4ZV86H9vv1&sz=w400";
+import logoNoBg from '../assets/logo_no_bg.png';
 
 interface NavbarProps {
   activeSection: string;
@@ -32,7 +31,7 @@ export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: 
           >
             <div className="h-10 w-10 flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105 duration-300">
               <img 
-                src={logoImg} 
+                src={logoNoBg} 
                 alt={siteText.navbar.logoAlt} 
                 className="h-full w-full object-contain"
                 referrerPolicy="no-referrer"
