@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import siteText from '../siteText.json';
 
 const logoImg = "https://drive.google.com/thumbnail?id=1NfDnf2BbZdelg_ALX0npN_4ZV86H9vv1&sz=w400";
 
@@ -13,13 +14,7 @@ interface NavbarProps {
 export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'events', label: 'Events' },
-    { id: 'sponsors', label: 'Sponsors' },
-    { id: 'collaborator', label: 'Collaborators' },
-  ];
+  const navItems = siteText.navbar.menuItems;
 
   const handleNavClick = (id: string) => {
     onNavigate(id);
@@ -38,13 +33,13 @@ export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: 
             <div className="h-10 w-10 flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105 duration-300">
               <img 
                 src={logoImg} 
-                alt="Shiny Side Connects logo" 
+                alt={siteText.navbar.logoAlt} 
                 className="h-full w-full object-contain"
                 referrerPolicy="no-referrer"
               />
             </div>
             <span className="font-extrabold tracking-[0.2em] text-xs sm:text-sm uppercase text-white font-sans whitespace-nowrap">
-              SHINY SIDE CONNECTS
+              {siteText.navbar.title}
             </span>
           </div>
 

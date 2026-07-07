@@ -1,30 +1,14 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import siteText from '../siteText.json';
 
 interface ManifestoQuote {
   text: string;
   author: string;
 }
 
-const MANIFESTO_QUOTES: ManifestoQuote[] = [
-  {
-    text: "We don't care what you ride. We care who you are. The motorcycle is simply the vehicle that parks us on the same sidewalk.",
-    author: "THE CORE MANIFESTO"
-  },
-  {
-    text: "Egos stay at home. Sidewalk curbs are flat, and so is our community — no hierarchies, no prerequisites, just coffee and smiles.",
-    author: "OUR COMMONS CREED"
-  },
-  {
-    text: "Built on friendliness, fueled by caffeine, and sustained by the simple act of showing up midweek to break the daily grind.",
-    author: "THE MIDWEEK PROTOCOL"
-  },
-  {
-    text: "Whether you roll in on a custom chopper, a vintage scooter, or walk over in a business suit — you have a place on our curb.",
-    author: "THE OPEN ACCESSION"
-  }
-];
+const MANIFESTO_QUOTES: ManifestoQuote[] = siteText.manifesto.quotes;
 
 const slideVariants = {
   enter: (direction: number) => ({

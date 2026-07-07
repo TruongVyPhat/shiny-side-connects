@@ -1,5 +1,6 @@
 import React from 'react';
 import { HeartHandshake, Mail } from 'lucide-react';
+import siteText from '../siteText.json';
 
 interface Partner {
   name: string;
@@ -48,14 +49,14 @@ export default function SponsorsSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs sm:text-sm font-semibold font-mono uppercase tracking-[0.25em] text-neutral-400 block">
-            Backed By Genuine Brands
+            {siteText.sponsors.badgeText}
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-neutral-950">
-            Our Proud Sponsors
+            {siteText.sponsors.headingText}
           </h2>
           <div className="h-0.5 w-16 bg-black mx-auto mt-3"></div>
           <p className="text-neutral-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-light">
-            We partner with progressive brands who believe in our absolute core values: inclusion, genuine warmth, and premium offline coffee hospitality.
+            {siteText.sponsors.subheadingText}
           </p>
         </div>
 
@@ -80,10 +81,10 @@ export default function SponsorsSection() {
               <HeartHandshake size={32} className="stroke-[1.5]" />
             </div>
             <h3 className="font-serif text-2xl text-neutral-950 font-bold">
-              Want to Support the Movement?
+              {siteText.sponsors.ctaHeader}
             </h3>
             <p className="text-xs text-neutral-500 font-light max-w-lg mx-auto leading-relaxed">
-              Whether you are an independent local roastery, a classic gear artisan, or an established global brand, help us power warm sidewalk cafes and bring people together offline.
+              {siteText.sponsors.ctaText}
             </p>
           </div>
 
@@ -92,7 +93,7 @@ export default function SponsorsSection() {
               href="mailto:partnerships@themotosocial.com?subject=Brand%20Sponsorship%20Inquiry%20-%20The%20Moto%20Social"
               className="inline-flex items-center gap-2 bg-neutral-950 text-white hover:bg-neutral-800 active:scale-95 px-6 py-3.5 text-xs font-bold uppercase tracking-widest transition-all cursor-pointer shadow font-mono"
             >
-              Get Partnership Deck
+              {siteText.sponsors.ctaButton}
               <Mail size={12} />
             </a>
           </div>

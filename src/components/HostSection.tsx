@@ -9,6 +9,7 @@ import {
   Layers,
   Award
 } from 'lucide-react';
+import siteText from '../siteText.json';
 
 // ==========================================
 // 📝 GOOGLE FORM REDIRECT CONFIGURATION
@@ -102,20 +103,20 @@ export default function HostSection() {
   ];
 
   return (
-    <section className="bg-neutral-50 py-24 px-4 sm:px-6 lg:px-8 font-sans border-b border-neutral-100">
+    <section id="collaborator" className="bg-neutral-50 py-24 px-4 sm:px-6 lg:px-8 font-sans border-b border-neutral-100">
       <div className="max-w-7xl mx-auto space-y-20">
         
         {/* Simplified Header Block */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs sm:text-sm font-semibold font-mono uppercase tracking-[0.25em] text-neutral-400 block">
-            Our Global Circle
+            {siteText.collaborators.badgeText}
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-neutral-950">
-            Meet The Collaborators
+            {siteText.collaborators.headingText}
           </h2>
           <div className="h-0.5 w-16 bg-black mx-auto mt-3"></div>
           <p className="text-neutral-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto font-light">
-            Shiny Side Connects is made possible by welcoming coordinators, photographers, and hospitable minds worldwide. Meet the 9 central collaborators who host monthly sidewalk espresso gatherings, build warm spaces, and keep egos out of the loop.
+            {siteText.collaborators.subheadingText}
           </p>
         </div>
 
@@ -159,10 +160,10 @@ export default function HostSection() {
               <div className="mt-4 pt-3 border-t border-neutral-100 flex items-center justify-between">
                 <span className="text-[9px] font-semibold text-neutral-400 uppercase tracking-widest flex items-center gap-1">
                   <Sparkles size={9} />
-                  Active Coordinator
+                  {siteText.collaborators.badgeActive}
                 </span>
                 <span className="text-[9px] text-neutral-400 italic">
-                  Since launch
+                  {siteText.collaborators.timelineIndicator}
                 </span>
               </div>
             </div>
@@ -177,11 +178,11 @@ export default function HostSection() {
           <div className="space-y-4 relative z-10">
             <span className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-neutral-400 inline-flex items-center gap-1.5 justify-center">
               <Heart size={11} className="text-neutral-300" />
-              JOIN THE CIRCLE
+              {siteText.collaborators.ctaBadge}
             </span>
-            <h3 className="text-3xl sm:text-4xl font-serif tracking-tight">Become a Collaborator</h3>
+            <h3 className="text-3xl sm:text-4xl font-serif tracking-tight">{siteText.collaborators.ctaHeader}</h3>
             <p className="text-xs text-neutral-400 font-light max-w-md mx-auto leading-relaxed">
-              Want to co-host, photograph local events, or run social media outreach for your city? Submit your questionnaire and help us build friendly sidewalk circles.
+              {siteText.collaborators.ctaText}
             </p>
           </div>
 
@@ -192,12 +193,12 @@ export default function HostSection() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-black hover:bg-neutral-100 active:scale-95 px-8 py-4 text-xs font-extrabold uppercase tracking-widest transition-all cursor-pointer shadow-lg hover:shadow-xl font-mono"
             >
-              Apply via Google Form
+              {siteText.collaborators.ctaButton}
               <ExternalLink size={14} className="stroke-[2.5]" />
             </a>
             
             <p className="text-[10.5px] text-neutral-500 font-light mt-4 italic">
-              Opens in a new tab • Our international coordination team reviews queries weekly.
+              {siteText.collaborators.ctaFootnote}
             </p>
           </div>
         </div>

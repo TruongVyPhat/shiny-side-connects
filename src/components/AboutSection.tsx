@@ -1,4 +1,5 @@
-import { Star, Heart, ShieldAlert, Sparkles, Globe } from 'lucide-react';
+import { Star, Heart, ShieldAlert } from 'lucide-react';
+import siteText from '../siteText.json';
 
 export default function AboutSection() {
 
@@ -30,14 +31,14 @@ export default function AboutSection() {
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <span className="text-xs sm:text-sm font-semibold font-mono uppercase tracking-[0.25em] text-neutral-400 block">
-            Our Story & Creed
+            {siteText.about.badgeText}
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-neutral-950">
-            It's About The People
+            {siteText.about.headingText}
           </h2>
           <div className="h-0.5 w-16 bg-black mx-auto mt-3"></div>
           <p className="text-neutral-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto font-light">
-            Founded on sidewalk curbs in Toronto, we believe human connection and friendliness can exist effortlessly on public city streets.
+            {siteText.about.subheadingText}
           </p>
         </div>
 
@@ -50,12 +51,12 @@ export default function AboutSection() {
             <div className="relative border border-neutral-200 shadow-xl overflow-hidden aspect-[4/3] bg-neutral-200">
               <img
                 src={communityImageUrl}
-                alt="Friends laughing around vintage motorcycles"
+                alt={siteText.about.imageAlt}
                 className="w-full h-full object-cover select-none"
                 referrerPolicy="no-referrer"
               />
               <div className="absolute top-5 left-5 bg-black text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 shadow-md">
-                Official Season Shoot
+                {siteText.about.imageLabel}
               </div>
             </div>
           </div>
@@ -63,44 +64,36 @@ export default function AboutSection() {
           {/* Narrative copy */}
           <div className="space-y-8">
             <h3 className="font-serif text-3xl sm:text-4xl text-neutral-950 leading-tight">
-              "We wanted to build the community we wished existed."
+              "{siteText.about.quoteText}"
             </h3>
             
             <p className="text-neutral-600 text-base sm:text-[17px] leading-relaxed font-light">
-              In 2013, founders Viktor and Samantha Radics noticed that while Toronto had plenty of motorcycle clubs, there wasn’t a low-pressure, open platform where everyday folks could gather simply to chat, network, and support independent coffee.
+              {siteText.about.narrativeP1}
             </p>
             
             <p className="text-neutral-600 text-base sm:text-[17px] leading-relaxed font-light">
-              They picked a favorite local coffee shop, spread the word on social media, and parked their custom bikes. Fifteen people showed up. They shared stories, admired the mechanics, and parted as friends. By the end of the summer, those 15 had turned into 150. Today, those circles represent thousands of participants in cities worldwide.
+              {siteText.about.narrativeP2}
             </p>
 
             {/* Core values cards list */}
             <div className="space-y-4 pt-4 border-t border-neutral-200">
-              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-neutral-400">Our Core Pillars</p>
+              <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-neutral-400">{siteText.about.pillarsHeader}</p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-white p-5 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
-                  <p className="text-sm font-bold text-neutral-950 uppercase tracking-wider mb-1.5">Inclusivity</p>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed font-light">Everyone is welcome. Egos stay home.</p>
-                </div>
-                <div className="bg-white p-5 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
-                  <p className="text-sm font-bold text-neutral-950 uppercase tracking-wider mb-1.5">Midweek</p>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed font-light">Breaks the grind on evening schedules.</p>
-                </div>
-                <div className="bg-white p-5 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
-                  <p className="text-sm font-bold text-neutral-950 uppercase tracking-wider mb-1.5">Caffeine</p>
-                  <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed font-light">Fueling community with coffee cups.</p>
-                </div>
+                {siteText.about.pillars.map((pillar, idx) => (
+                  <div key={idx} className="bg-white p-5 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
+                    <p className="text-sm font-bold text-neutral-950 uppercase tracking-wider mb-1.5">{pillar.title}</p>
+                    <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed font-light">{pillar.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
         </div>
 
-
-
         {/* Detailed creed items */}
         <div className="space-y-8">
-          <h3 className="font-serif text-center text-3xl tracking-tight text-neutral-950 mt-16 mb-10">What We Stand For</h3>
+          <h3 className="font-serif text-center text-3xl tracking-tight text-neutral-950 mt-16 mb-10">{siteText.about.whatWeStandForHeader}</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {manifestos.map((man, i) => (
               <div key={i} className="bg-white p-8 border border-neutral-200 space-y-4 hover:border-black/20 transition-colors shadow-sm">

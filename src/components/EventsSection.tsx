@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Globe, Sparkles, MapPin, Navigation, Clock, ChevronLeft, ChevronRight, Calendar } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import siteText from '../siteText.json';
 
 interface EventItem {
   id: string;
@@ -133,14 +134,14 @@ export default function EventsSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
           <span className="text-xs sm:text-sm font-semibold font-mono uppercase tracking-[0.25em] text-neutral-400 block">
-            Collective Gatherings
+            {siteText.events.badgeText}
           </span>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif tracking-tight text-white">
-            Upcoming Meetups
+            {siteText.events.headingText}
           </h2>
           <div className="h-0.5 w-16 bg-white mx-auto mt-3"></div>
           <p className="text-neutral-400 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto font-light">
-            We gather monthly on curbsides and friendly parking spots. Slide through our active calendar of meets below.
+            {siteText.events.subheadingText}
           </p>
         </div>
 
@@ -183,13 +184,13 @@ export default function EventsSection() {
                         <div className="flex items-center gap-2.5">
                           <Globe size={22} className="text-white shrink-0" />
                           <span className="text-sm font-mono uppercase tracking-[0.3em] text-neutral-300">
-                            {selectedEvent.status} ENTRY BOARD
+                            {selectedEvent.status} {siteText.events.entryBoardLabel}
                           </span>
                         </div>
                         <div className="flex items-center gap-2 bg-emerald-950/80 border border-emerald-500/50 px-3.5 py-1.5 rounded-full">
                           <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
                           <span className="text-xs font-mono uppercase tracking-widest text-emerald-350 font-bold">
-                            ACTIVE SPREE
+                            {siteText.events.activeBadge}
                           </span>
                         </div>
                       </div>
@@ -199,7 +200,7 @@ export default function EventsSection() {
                         <div className="flex flex-wrap items-center gap-3">
                           <span className="text-xs font-mono bg-white text-black px-2.5 py-1 font-bold inline-flex items-center gap-1">
                             <Sparkles size={11} className="fill-black text-black" />
-                            CONFIRMED MEET
+                            {siteText.events.confirmedLabel}
                           </span>
                           <span className="text-xs font-mono bg-white/10 text-white px-2.5 py-1 border border-white/10 font-bold inline-flex items-center gap-1">
                             <Clock size={11} />
@@ -218,57 +219,56 @@ export default function EventsSection() {
                         </p>
                       </div>
                     </div>
-
                     {/* Impressive Location Presentation with Increased Font Sizing */}
-                    <div className="bg-white/[0.03] border border-white/10 p-6 sm:p-8 rounded-sm space-y-6 mt-6">
-                      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:items-center">
-                        
-                        {/* Column 1: Venue Label & Large Branding */}
-                        <div className="md:col-span-5 space-y-2 border-l-2 border-white/35 pl-4 md:pl-6">
-                          <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-400 block font-semibold">
-                            THE VENUE
-                          </span>
-                          <h4 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-none">
-                            {selectedEvent.venue}
-                          </h4>
-                          <div className="flex items-center gap-1.5 text-xs sm:text-sm font-mono text-neutral-300">
-                            <span>COORDINATES :</span>
-                            <span className="text-white font-medium">{selectedEvent.coordinates}</span>
-                          </div>
-                        </div>
-
-                        {/* Column 2: Exact Street Address (Enlarged) */}
-                        <div className="md:col-span-4 space-y-2 border-l border-white/15 md:pl-8">
-                          <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-400 block font-semibold">
-                            STREET ADDRESS
-                          </span>
-                          <p className="text-lg sm:text-xl lg:text-2xl text-white font-medium tracking-wide leading-tight sm:leading-snug">
-                            {selectedEvent.address.split(',')[0]},<br />
-                            {selectedEvent.address.split(',').slice(1).join(',')}
-                          </p>
-                        </div>
-
-                        {/* Column 3: Directions Action Trigger */}
-                        <div className="md:col-span-3 flex md:justify-end">
-                          <a
-                            href={selectedEvent.directionsUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex w-full md:w-auto items-center justify-center bg-white text-black hover:bg-neutral-100 px-8 py-4 text-xs sm:text-sm font-extrabold uppercase tracking-widest transition-all duration-300 font-mono shadow-md whitespace-nowrap border-2 border-white hover:border-neutral-100 hover:scale-[1.02] transform cursor-pointer"
-                          >
-                            <Navigation size={14} className="mr-1.5 shrink-0" />
-                            Get Directions
-                          </a>
-                        </div>
+                     <div className="bg-white/[0.03] border border-white/10 p-6 sm:p-8 rounded-sm space-y-6 mt-6">
+                       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:items-center">
+                         
+                         {/* Column 1: Venue Label & Large Branding */}
+                         <div className="md:col-span-5 space-y-2 border-l-2 border-white/35 pl-4 md:pl-6">
+                           <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-400 block font-semibold">
+                             {siteText.events.venueLabel}
+                           </span>
+                           <h4 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-none">
+                             {selectedEvent.venue}
+                           </h4>
+                           <div className="flex items-center gap-1.5 text-xs sm:text-sm font-mono text-neutral-300">
+                             <span>COORDINATES :</span>
+                             <span className="text-white font-medium">{selectedEvent.coordinates}</span>
+                           </div>
+                         </div>
+ 
+                         {/* Column 2: Exact Street Address (Enlarged) */}
+                         <div className="md:col-span-4 space-y-2 border-l border-white/15 md:pl-8">
+                           <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-400 block font-semibold">
+                             {siteText.events.streetAddressLabel}
+                           </span>
+                           <p className="text-lg sm:text-xl lg:text-2xl text-white font-medium tracking-wide leading-tight sm:leading-snug">
+                             {selectedEvent.address.split(',')[0]},<br />
+                             {selectedEvent.address.split(',').slice(1).join(',')}
+                           </p>
+                         </div>
+ 
+                         {/* Column 3: Directions Action Trigger */}
+                         <div className="md:col-span-3 flex md:justify-end">
+                           <a
+                             href={selectedEvent.directionsUrl}
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             className="inline-flex w-full md:w-auto items-center justify-center bg-white text-black hover:bg-neutral-100 px-8 py-4 text-xs sm:text-sm font-extrabold uppercase tracking-widest transition-all duration-300 font-mono shadow-md whitespace-nowrap border-2 border-white hover:border-neutral-100 hover:scale-[1.02] transform cursor-pointer"
+                           >
+                             <Navigation size={14} className="mr-1.5 shrink-0" />
+                             {siteText.events.buttonDirections}
+                           </a>
+                         </div>
 
                       </div>
                     </div>
 
-                    {/* Footnote ticket summary (Enlarged text and styled admission badge) */}
-                    <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 text-sm sm:text-base text-neutral-300 font-light leading-relaxed mt-4">
-                      <p className="sm:max-w-md">
-                        Let's build a safe, welcoming evening together. Drive your car, ride your motorcycle, scooter, or just drop by on foot to enjoy hot caffeine cups and zero-egos conversations.
-                      </p>
+                     {/* Footnote ticket summary (Enlarged text and styled admission badge) */}
+                     <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 text-sm sm:text-base text-neutral-300 font-light leading-relaxed mt-4">
+                       <p className="sm:max-w-md">
+                         {siteText.events.footnoteText}
+                       </p>
                       <span className="font-mono text-xs sm:text-sm uppercase tracking-widest bg-white/15 px-4 py-2.5 border border-white/10 text-white shrink-0 self-start sm:self-center font-bold">
                         {selectedEvent.admission}
                       </span>

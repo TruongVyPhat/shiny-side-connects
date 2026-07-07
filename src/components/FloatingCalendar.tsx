@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar as CalendarIcon, X, ChevronLeft, ChevronRight, Clock, MapPin, Sparkles, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import siteText from '../siteText.json';
 
 interface EventDateMapping {
   year: number;
@@ -159,7 +160,7 @@ export default function FloatingCalendar() {
                 4
               </span>
               <CalendarIcon size={16} className="text-amber-400 group-hover:rotate-12 transition-transform duration-300" />
-              <span>Event Board</span>
+              <span>{siteText.floatingCalendar.triggerText}</span>
             </motion.button>
           )}
         </AnimatePresence>
@@ -185,7 +186,7 @@ export default function FloatingCalendar() {
                   <div className="flex items-center gap-1.5">
                     <Sparkles size={14} className="text-amber-400 animate-pulse" />
                     <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-semibold">
-                      CURBSIDE CALENDAR
+                      {siteText.floatingCalendar.headerText}
                     </span>
                   </div>
                   <button
@@ -299,13 +300,13 @@ export default function FloatingCalendar() {
                           onClick={jumpToEventsSection}
                           className="w-full py-2 bg-white text-black hover:bg-neutral-100 text-[10px] font-bold font-mono uppercase tracking-widest flex items-center justify-center gap-1.5 cursor-pointer mt-1"
                         >
-                          <span>Get Passport Tickets</span>
+                          <span>{siteText.floatingCalendar.buttonPassport}</span>
                           <ArrowRight size={11} />
                         </button>
                       </motion.div>
                     ) : (
                       <div className="text-center py-4 text-neutral-500 text-xs font-light font-sans italic">
-                        Select a highlighted date to see meetup details.
+                        {siteText.floatingCalendar.noEventText}
                       </div>
                     )}
                   </AnimatePresence>

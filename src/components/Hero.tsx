@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, MapPin, Coffee, Users, ChevronLeft, ChevronRight, Camera } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import siteText from '../siteText.json';
+
+import banner1 from '../assets/banner/moto_banner_1.jpg';
+import banner2 from '../assets/banner/moto_banner_2.jpg';
 
 interface HeroProps {
   onNavigate: (section: string) => void;
@@ -8,24 +12,12 @@ interface HeroProps {
 
 const HERO_IMAGES = [
   {
-    url: '/src/assets/images/hero_motorcycles_1781624019427.jpg',
-    caption: 'Classic rides gathered side-by-side'
+    url: banner1,
+    caption: 'Classic motorcycle lineup at the Sidewalk Meetup'
   },
   {
-    url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&q=80&w=1600',
-    caption: 'Monthly curbside meetups'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&q=80&w=1600',
-    caption: 'Beautiful custom builds & café racers'
-  },
-  {
-    url: '/src/assets/images/community_laughing_1781624034619.jpg',
-    caption: 'Genuine people, hot coffee & warm smiles'
-  },
-  {
-    url: 'https://images.unsplash.com/photo-1599819811279-d5ad9cccf838?auto=format&fit=crop&q=80&w=1600',
-    caption: 'Passionate engineering & vintage details'
+    url: banner2,
+    caption: 'Curbside vintage builds & cafe racers side-by-side'
   }
 ];
 
@@ -98,17 +90,17 @@ export default function Hero({ onNavigate }: HeroProps) {
             <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 border border-white/20">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
               <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-                Upcoming Season • Summer 2026
+                {siteText.hero.badgeText}
               </span>
             </div>
 
             <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight">
-              Everybody is welcome. <br />
-              <span className="italic font-normal font-serif text-white/90">Bring what you've got.</span>
+              {siteText.hero.headingText} <br />
+              <span className="italic font-normal font-serif text-white/90">{siteText.hero.subheadingText}</span>
             </h1>
 
             <p className="text-neutral-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl font-sans font-light">
-              We’re a community building event. No attitudes. Just friendly people, warm coffee, and amazing machines on local streets.
+              {siteText.hero.descriptionText}
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
@@ -116,14 +108,14 @@ export default function Hero({ onNavigate }: HeroProps) {
                 onClick={() => onNavigate('events')}
                 className="bg-white text-black hover:bg-neutral-100 px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all flex items-center justify-center space-x-2 rounded-none group shadow-lg cursor-pointer"
               >
-                <span>View Live Meetups</span>
+                <span>{siteText.hero.buttonMeetups}</span>
                 <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
               </button>
               <button
                 onClick={() => onNavigate('about')}
                 className="border border-white/30 hover:border-white text-white bg-black/30 hover:bg-black/50 backdrop-blur-sm px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-all rounded-none cursor-pointer"
               >
-                Our Manifesto
+                {siteText.hero.buttonManifesto}
               </button>
             </div>
           </div>
@@ -163,10 +155,10 @@ export default function Hero({ onNavigate }: HeroProps) {
               </div>
               <div className="space-y-1.5">
                 <h3 className="text-xs uppercase tracking-[0.2em] font-extrabold text-neutral-900">
-                  It's About People
+                  {siteText.hero.pillars[0].title}
                 </h3>
                 <p className="text-neutral-600 text-[13px] leading-relaxed">
-                  We care about the people, not what you ride. Bring a custom chopper, a modern scooter, or just bring a friend on foot. No status, no egos.
+                  {siteText.hero.pillars[0].description}
                 </p>
               </div>
             </div>
@@ -177,10 +169,10 @@ export default function Hero({ onNavigate }: HeroProps) {
               </div>
               <div className="space-y-1.5">
                 <h3 className="text-xs uppercase tracking-[0.2em] font-extrabold text-neutral-900">
-                  Supporting Local Coffee
+                  {siteText.hero.pillars[1].title}
                 </h3>
                 <p className="text-neutral-600 text-[13px] leading-relaxed">
-                  Every event happens at a local independent cafe, showcasing independent coffee shops and boosting local neighborhood business models.
+                  {siteText.hero.pillars[1].description}
                 </p>
               </div>
             </div>
@@ -191,10 +183,10 @@ export default function Hero({ onNavigate }: HeroProps) {
               </div>
               <div className="space-y-1.5">
                 <h3 className="text-xs uppercase tracking-[0.2em] font-extrabold text-neutral-900">
-                  A Global Network
+                  {siteText.hero.pillars[2].title}
                 </h3>
                 <p className="text-neutral-600 text-[13px] leading-relaxed">
-                  From Montreal to Cape Town, thousands of riders meet monthly. Our global community stays connected through simple local passions.
+                  {siteText.hero.pillars[2].description}
                 </p>
               </div>
             </div>

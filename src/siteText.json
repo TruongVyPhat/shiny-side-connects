@@ -1,0 +1,141 @@
+{
+  "navbar": {
+    "logoAlt": "Shiny Side Connects logo",
+    "title": "SHINY SIDE CONNECTS",
+    "menuItems": [
+      { "id": "hero", "label": "Home" },
+      { "id": "about", "label": "About" },
+      { "id": "events", "label": "Events" },
+      { "id": "sponsors", "label": "Sponsors" },
+      { "id": "collaborator", "label": "Collaborators" }
+    ]
+  },
+  "hero": {
+    "badgeText": "Upcoming Season • Summer 2026",
+    "headingText": "Everybody is welcome.",
+    "subheadingText": "Bring what you've got.",
+    "descriptionText": "We’re a community building event. No attitudes. Just friendly people, warm coffee, and amazing machines on local streets.",
+    "buttonMeetups": "View Live Meetups",
+    "buttonManifesto": "Our Manifesto",
+    "indicatorPrefix": "Slide",
+    "pillars": [
+      {
+        "title": "It's About People",
+        "description": "We care about the people, not what you ride. Bring a custom chopper, a modern scooter, or just bring a friend on foot. No status, no egos."
+      },
+      {
+        "title": "Supporting Local Coffee",
+        "description": "Every event happens at a local independent cafe, showcasing independent coffee shops and boosting local neighborhood business models."
+      },
+      {
+        "title": "A Global Network",
+        "description": "From Montreal to Cape Town, thousands of riders meet monthly. Our global community stays connected through simple local passions."
+      }
+    ]
+  },
+  "about": {
+    "badgeText": "Our Story & Creed",
+    "headingText": "It's About The People",
+    "subheadingText": "Founded on sidewalk curbs in Toronto, we believe human connection and friendliness can exist effortlessly on public city streets.",
+    "imageLabel": "Official Season Shoot",
+    "imageAlt": "Friends laughing around vintage motorcycles",
+    "quoteText": "We wanted to build the community we wished existed.",
+    "narrativeP1": "In 2013, founders Viktor and Samantha Radics noticed that while Toronto had plenty of motorcycle clubs, there wasn’t a low-pressure, open platform where everyday folks could gather simply to chat, network, and support independent coffee.",
+    "narrativeP2": "They picked a favorite local coffee shop, spread the word on social media, and parked their custom bikes. Fifteen people showed up. They shared stories, admired the mechanics, and parted as friends. By the end of the summer, those 15 had turned into 150. Today, those circles represent thousands of participants in cities worldwide.",
+    "pillarsHeader": "Our Core Pillars",
+    "pillars": [
+      {
+        "title": "Inclusivity",
+        "description": "Everyone is welcome. Egos stay home."
+      },
+      {
+        "title": "Midweek",
+        "description": "Breaks the grind on evening schedules."
+      },
+      {
+        "title": "Caffeine",
+        "description": "Fueling community with coffee cups."
+      }
+    ],
+    "whatWeStandForHeader": "What We Stand For"
+  },
+  "manifesto": {
+    "badgeText": "Curbside Creed",
+    "quotes": [
+      {
+        "text": "We don't care what you ride. We care who you are. The motorcycle is simply the vehicle that parks us on the same sidewalk.",
+        "author": "THE CORE MANIFESTO"
+      },
+      {
+        "text": "Egos stay at home. Sidewalk curbs are flat, and so is our community — no hierarchies, no prerequisites, just coffee and smiles.",
+        "author": "OUR COMMONS CREED"
+      },
+      {
+        "text": "Built on friendliness, fueled by caffeine, and sustained by the simple act of showing up midweek to break the daily grind.",
+        "author": "THE MIDWEEK PROTOCOL"
+      },
+      {
+        "text": "Whether you roll in on a custom chopper, a vintage scooter, or walk over in a business suit — you have a place on our curb.",
+        "author": "THE OPEN ACCESSION"
+      }
+    ]
+  },
+  "events": {
+    "badgeText": "Collective Gatherings",
+    "headingText": "Upcoming Meetups",
+    "subheadingText": "We gather monthly on curbsides and friendly parking spots. Slide through our active calendar of meets below.",
+    "entryBoardLabel": "ENTRY BOARD",
+    "activeBadge": "ACTIVE SPREE",
+    "confirmedLabel": "CONFIRMED MEET",
+    "venueLabel": "THE VENUE",
+    "streetAddressLabel": "STREET ADDRESS",
+    "buttonDirections": "Get Directions",
+    "footnoteText": "Let's build a safe, welcoming evening together. Drive your car, ride your motorcycle, scooter, or just drop by on foot to enjoy hot caffeine cups and zero-egos conversations."
+  },
+  "sponsors": {
+    "badgeText": "Backed By Genuine Brands",
+    "headingText": "Our Proud Sponsors",
+    "subheadingText": "We partner with progressive brands who believe in our absolute core values: inclusion, genuine warmth, and premium offline coffee hospitality.",
+    "ctaHeader": "Want to Support the Movement?",
+    "ctaText": "Whether you are an independent local roastery, a classic gear artisan, or an established global brand, help us power warm sidewalk cafes and bring people together offline.",
+    "ctaButton": "Get Partnership Deck"
+  },
+  "collaborators": {
+    "badgeText": "Our Global Circle",
+    "headingText": "Meet The Collaborators",
+    "subheadingText": "Shiny Side Connects is made possible by welcoming coordinators, photographers, and hospitable minds worldwide. Meet the 9 central collaborators who host monthly sidewalk espresso gatherings, build warm spaces, and keep egos out of the loop.",
+    "badgeActive": "Active Coordinator",
+    "timelineIndicator": "Since launch",
+    "ctaBadge": "JOIN THE CIRCLE",
+    "ctaHeader": "Become a Collaborator",
+    "ctaText": "Want to co-host, photograph local events, or run social media outreach for your city? Submit your questionnaire and help us build friendly sidewalk circles.",
+    "ctaButton": "Apply via Google Form",
+    "ctaFootnote": "Opens in a new tab • Our international coordination team reviews queries weekly."
+  },
+  "floatingCalendar": {
+    "triggerText": "Event Board",
+    "headerText": "CURBSIDE CALENDAR",
+    "buttonPassport": "Get Passport Tickets",
+    "noEventText": "Select a highlighted date to see meetup details."
+  },
+  "footer": {
+    "description": "We’re a monthly community building event. Everyone is welcome. Motorcycles are just the excuse to gather. Egos stay home. Bring whatever gets you moving.",
+    "navHeader": "Chapters and Seasons",
+    "dispatchHeader": "The Season Dispatch",
+    "dispatchDescription": "Sign up to receive immediate notifications of upcoming schedules, location changes, and gear drops!",
+    "dispatchPlaceholder": "Enter email address",
+    "dispatchActivePlaceholder": "Subscription Active!",
+    "chapters": [
+      "Toronto Chapter",
+      "Montréal Chapter",
+      "New York City Chapter",
+      "Vancouver Chapter"
+    ],
+    "copyrightSuffix": "Shiny Side Connects. All rights reserved.",
+    "links": [
+      "Privacy Policy",
+      "Terms of Service",
+      "Contact"
+    ]
+  }
+}

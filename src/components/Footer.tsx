@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Instagram, Facebook, Send, Check, MessageSquare, Users, Calendar } from 'lucide-react';
+import siteText from '../siteText.json';
 
 const logoImg = "https://drive.google.com/thumbnail?id=1NfDnf2BbZdelg_ALX0npN_4ZV86H9vv1&sz=w400";
 
@@ -38,7 +39,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-neutral-400 text-xs leading-relaxed max-w-sm font-light">
-              We’re a monthly community building event. Everyone is welcome. Motorcycles are just the excuse to gather. Egos stay home. Bring whatever gets you moving.
+              {siteText.footer.description}
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
               {/* Discord */}
@@ -125,20 +126,23 @@ export default function Footer() {
 
           {/* Column 2: Quick navigation anchors */}
           <div className="space-y-4">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-neutral-400">Chapters and Seasons</h4>
+            <h4 className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-neutral-400">{siteText.footer.navHeader}</h4>
             <ul className="space-y-2 text-xs text-neutral-300 font-light font-sans">
-              <li><span className="text-neutral-400 hover:text-white cursor-pointer transition-colors">Toronto Chapter</span></li>
-              <li><span className="text-neutral-400 hover:text-white cursor-pointer transition-colors">Montréal Chapter</span></li>
-              <li><span className="text-neutral-400 hover:text-white cursor-pointer transition-colors">New York City Chapter</span></li>
-              <li><span className="text-neutral-400 hover:text-white cursor-pointer transition-colors">Vancouver Chapter</span></li>
+              {siteText.footer.chapters.map((chapter) => (
+                <li key={chapter}>
+                  <span className="text-neutral-400 hover:text-white cursor-pointer transition-colors">
+                    {chapter}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Column 3: Custom local newsletter signups */}
           <div className="space-y-4">
-            <h4 className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-neutral-400">The Season Dispatch</h4>
+            <h4 className="text-[10px] font-extrabold uppercase tracking-[0.2em] text-neutral-400">{siteText.footer.dispatchHeader}</h4>
             <p className="text-neutral-400 text-xs font-light leading-relaxed">
-              Sign up to receive immediate notifications of upcoming schedules, location changes, and gear drops!
+              {siteText.footer.dispatchDescription}
             </p>
             
             <form onSubmit={handleSubscribe} className="space-y-2">
@@ -147,7 +151,7 @@ export default function Footer() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={subscribed ? "Subscription Active!" : "Enter email address"}
+                  placeholder={subscribed ? siteText.footer.dispatchActivePlaceholder : siteText.footer.dispatchPlaceholder}
                   disabled={subscribed}
                   className={`w-full bg-neutral-900 border text-xs px-4 py-3 pr-10 focus:outline-none transition-all ${
                     subscribed 
@@ -170,11 +174,13 @@ export default function Footer() {
 
         {/* Bottom copyright items */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-500 font-light space-y-4 sm:space-y-0">
-          <p>© {new Date().getFullYear()} Shiny Side Connects. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {siteText.footer.copyrightSuffix}</p>
           <div className="flex space-x-6">
-            <span className="hover:text-white cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Terms of Service</span>
-            <span className="hover:text-white cursor-pointer transition-colors">Contact</span>
+            {siteText.footer.links.map((link) => (
+              <span key={link} className="hover:text-white cursor-pointer transition-colors">
+                {link}
+              </span>
+            ))}
           </div>
         </div>
 
