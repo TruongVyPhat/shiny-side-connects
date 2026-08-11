@@ -6,15 +6,13 @@
       { "id": "hero", "label": "Home" },
       { "id": "about", "label": "About" },
       { "id": "events", "label": "Events" },
-      { "id": "sponsors", "label": "Sponsors" },
-      { "id": "collaborator", "label": "Collaborators" }
+      { "id": "gallery", "label": "Gallery" }
     ]
   },
   "hero": {
     "badgeText": "Upcoming Season • Summer 2026",
-    "headingText": "Everybody is welcome.",
-    "subheadingText": "Bring what you've got.",
-    "descriptionText": "We’re a community building event. No attitudes. Just friendly people, warm coffee, and amazing machines on local streets.",
+    "headingText": "Ride, Connect, Respect",
+    "descriptionText": "Keep the Shiny Side Up. Keep the Community Connected. RIDE, CONNECT, RESPECT Edmonton’s premier motorcycle community. We ride together, share the passion, and build connections that last longer than the short Alberta riding season.",
     "buttonMeetups": "View Live Meetups",
     "buttonManifesto": "Our Manifesto",
     "indicatorPrefix": "Slide",
@@ -24,37 +22,37 @@
         "description": "We care about the people, not what you ride. Bring a custom chopper, a modern scooter, or just bring a friend on foot. No status, no egos."
       },
       {
-        "title": "Supporting Local Coffee",
-        "description": "Every event happens at a local independent cafe, showcasing independent coffee shops and boosting local neighborhood business models."
+        "title": "Supporting Local",
+        "description": "Every event happens at a local independently run business, bringing together local DJ’s, Food vendors, Artists and photographers. Bring together the community for one shared passion and goal."
       },
       {
-        "title": "A Global Network",
-        "description": "From Montreal to Cape Town, thousands of riders meet monthly. Our global community stays connected through simple local passions."
+        "title": "Local Network",
+        "description": "From cruising the River Valley to our massive mid-season meets, local riders gather all season long. Our community stays connected through a simple, shared love for the ride."
       }
     ]
   },
   "about": {
     "badgeText": "Our Story & Creed",
-    "headingText": "It's About The People",
-    "subheadingText": "Founded on sidewalk curbs in Toronto, we believe human connection and friendliness can exist effortlessly on public city streets.",
+    "headingText": "Ride, Connect, Respect",
+    "subheadingText": "At Shiny Side Connects, it’s not just about what you ride—it’s about who you ride with. Born out of a passion for two wheels, we are an Edmonton-based community dedicated to bringing local riders together. Whether you’re carving corners on a sportbike, cruising on a V-twin, or just starting your journey, you have a place here. We believe in safe riding, sharing knowledge, and building a local scene where everyone belongs.",
     "imageLabel": "Official Season Shoot",
     "imageAlt": "Friends laughing around vintage motorcycles",
-    "quoteText": "We wanted to build the community we wished existed.",
-    "narrativeP1": "In 2013, founders Viktor and Samantha Radics noticed that while Toronto had plenty of motorcycle clubs, there wasn’t a low-pressure, open platform where everyday folks could gather simply to chat, network, and support independent coffee.",
-    "narrativeP2": "They picked a favorite local coffee shop, spread the word on social media, and parked their custom bikes. Fifteen people showed up. They shared stories, admired the mechanics, and parted as friends. By the end of the summer, those 15 had turned into 150. Today, those circles represent thousands of participants in cities worldwide.",
+    "quoteText": "We wanted  to build the community we wished existed",
+    "narrativeP1": "In 2025, founder of SSC, Tang, noticed that while Edmonton had plenty of riders, there wasn’t a low-pressure, open platform where everyday enthusiasts could gather simply to talk bikes, network, and connect off the road. He then decided to found a community dedicated to this effort to bring birth to Shiny Side Connects.",
+    "narrativeP2": "They started up in 2025 at Off-Campus restaurant, spread the word, and parked their bikes. [A small number, e.g., A dozen] people showed up. They shared stories, admired each other's builds, and parted as friends. By the time the mid-season meets rolled around, dozens of people started coming out, and that core group had multiplied. The founders recognized the incredible potential of their growing network and, during the winter of 2025, dedicated themselves to its expansion. Today, Shiny Side Connects has evolved into a robust, thriving community—uniting the local riding scene and keeping the shiny side up.",
     "pillarsHeader": "Our Core Pillars",
     "pillars": [
       {
         "title": "Inclusivity",
-        "description": "Everyone is welcome. Egos stay home."
+        "description": "Doesn't matter your experience or what you ride, egos stay at home (or everyone is welcome)."
       },
       {
-        "title": "Midweek",
-        "description": "Breaks the grind on evening schedules."
+        "title": "Community",
+        "description": "We are not just here for the bikes, we are here for each other."
       },
       {
-        "title": "Caffeine",
-        "description": "Fueling community with coffee cups."
+        "title": "Respect",
+        "description": "For each other and the communities we ride in."
       }
     ],
     "whatWeStandForHeader": "What We Stand For"
@@ -94,16 +92,16 @@
   },
   "sponsors": {
     "badgeText": "Backed By Genuine Brands",
-    "headingText": "Our Proud Sponsors",
+    "headingText": "Partners For Now",
     "subheadingText": "We partner with progressive brands who believe in our absolute core values: inclusion, genuine warmth, and premium offline coffee hospitality.",
-    "ctaHeader": "Want to Support the Movement?",
-    "ctaText": "Whether you are an independent local roastery, a classic gear artisan, or an established global brand, help us power warm sidewalk cafes and bring people together offline.",
+    "ctaHeader": "Want to Support?",
+    "ctaText": "Whether you are a trusted local bike shop, a favorite local restaurant, or an independent artisan, help us fuel our community and bring riders together offline.",
     "ctaButton": "Get Partnership Deck"
   },
   "collaborators": {
     "badgeText": "Our Global Circle",
-    "headingText": "Meet The Collaborators",
-    "subheadingText": "Shiny Side Connects is made possible by welcoming coordinators, photographers, and hospitable minds worldwide. Meet the 9 central collaborators who host monthly sidewalk espresso gatherings, build warm spaces, and keep egos out of the loop.",
+    "headingText": "Meet the Shiny Side Society",
+    "subheadingText": "Shiny Side Connects is made possible by welcoming coordinators, photographers, and hospitable minds worldwide. Meet the society members who host monthly meets and weekly bike nights, build warm spaces, and keep egos out of the loop.",
     "badgeActive": "Active Coordinator",
     "timelineIndicator": "Since launch",
     "ctaBadge": "JOIN THE CIRCLE",

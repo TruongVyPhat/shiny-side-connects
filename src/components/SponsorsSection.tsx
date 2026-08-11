@@ -13,32 +13,18 @@ interface Partner {
 export default function SponsorsSection() {
   const primaryPartners: Partner[] = [
     {
-      name: 'Triumph Motorcycles',
-      category: 'Official Motorcycle Partner',
-      description: 'Supporting human connection and custom heritage motorcycle culture globally across countless city chapters.',
-      logoText: 'TRIUMPH',
-      badge: 'Global Partner'
+      name: 'Tulu',
+      category: 'Primary Partner',
+      description: 'Primary partner supporting Shiny Side Connects community gatherings and events.',
+      logoText: 'TULU',
+      badge: 'Primary Partner'
     },
     {
-      name: 'Stumptown Coffee Roasters',
-      category: 'Premium Espresso Curator',
-      description: 'Fueling local community hosts with award-winning custom blends and supporting independent cafe culture.',
-      logoText: 'STUMPTOWN',
-      badge: 'Official Coffee'
-    },
-    {
-      name: 'Hedon Helmets',
-      category: 'Safety & Lifestyle Craft',
-      description: 'Fusing clean classic aesthetics with premium safety technology, sponsoring community photo awards.',
-      logoText: 'HEDON',
-      badge: 'Design Award'
-    },
-    {
-      name: 'Deus Ex Machina',
-      category: 'Street & Apparel Culture',
-      description: 'Sharing our appreciation for cross-country exploration, attitude-free riding, and local sidewalk social gatherings.',
-      logoText: 'DEUS',
-      badge: 'Heritage'
+      name: 'Tippsy Moose',
+      category: 'Community Partner',
+      description: 'Local venue and community partner welcoming Edmonton riders.',
+      logoText: 'TIPPSY MOOSE',
+      badge: 'Community Partner'
     }
   ];
 

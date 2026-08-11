@@ -20,7 +20,7 @@ export default function AboutSection() {
     {
       icon: <ShieldAlert size={20} className="text-black" />,
       titleName: "Supporting Small Business",
-      textDetail: "By keeping events relaxed, casual, and located at independent local coffee spots, we inject immediate vitality and economic patronage back into local urban highstreets."
+      textDetail: "By connecting our network with local bike shops, neighborhood restaurants, and independent photographers, musicians, and artists, we drive immediate vitality and support right back into our local economy."
     }
   ];
 
@@ -78,7 +78,7 @@ export default function AboutSection() {
             {/* Core values cards list */}
             <div className="space-y-4 pt-4 border-t border-neutral-200">
               <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-neutral-400">{siteText.about.pillarsHeader}</p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {siteText.about.pillars.map((pillar, idx) => (
                   <div key={idx} className="bg-white p-5 border border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
                     <p className="text-sm font-bold text-neutral-950 uppercase tracking-wider mb-1.5">{pillar.title}</p>

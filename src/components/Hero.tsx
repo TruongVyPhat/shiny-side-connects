@@ -95,8 +95,7 @@ export default function Hero({ onNavigate }: HeroProps) {
             </div>
 
             <h1 className="font-serif text-white text-4xl sm:text-5xl md:text-7xl leading-[1.05] tracking-tight">
-              {siteText.hero.headingText} <br />
-              <span className="italic font-normal font-serif text-white/90">{siteText.hero.subheadingText}</span>
+              {siteText.hero.headingText}
             </h1>
 
             <p className="text-neutral-300 text-base sm:text-lg md:text-xl font-normal leading-relaxed max-w-2xl font-sans font-light">

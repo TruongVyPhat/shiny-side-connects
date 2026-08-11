@@ -29,76 +29,60 @@ interface CollaboratorProfile {
 export default function HostSection() {
   const collaborators: CollaboratorProfile[] = [
     {
-      name: 'Viktor Radics',
-      role: 'Co-Founder & Host',
+      name: 'Tang',
+      role: 'Founder',
       city: 'Toronto',
       country: 'Canada',
-      bio: 'Avid custom vintage motorcycle builder and coffee enthusiast. Viktor believes in zero-pressure environments where egos stay home.',
+      bio: 'Founder',
       imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=250&auto=format&fit=crop'
     },
     {
-      name: 'Samantha Radics',
-      role: 'Co-Founder & Creative Director',
+      name: 'Justin',
+      role: 'Co-Founder',
       city: 'Toronto',
       country: 'Canada',
-      bio: 'Establishes the worldwide visual identity and design standards, helping local crews customize their promotional flyers.',
+      bio: 'Co-Founder',
       imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=250&auto=format&fit=crop'
     },
     {
-      name: 'Marc-Antoine',
-      role: 'Local Host & Coordinator',
+      name: 'Tobey',
+      role: 'Creative Director/coordinator',
       city: 'Montréal',
       country: 'Canada',
-      bio: 'Rides a vintage 1982 Yamaha XS650 and coordinates cozy curb-side gatherings across independent espresso bars in Québec.',
+      bio: 'Creative Director/coordinator',
       imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=250&auto=format&fit=crop'
     },
     {
-      name: 'Kassandra Miller',
-      role: 'Chapter Coordinator',
+      name: 'Devin',
+      role: 'Networking Ambassador',
       city: 'Vancouver',
       country: 'Canada',
       bio: 'Dual-sport commuter dedicated to fostering friendly, zero-ego community spaces for new riders on the West Coast.',
       imageUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?q=80&w=250&auto=format&fit=crop'
     },
     {
-      name: 'Zane Hendricks',
-      role: 'Community Captain',
+      name: 'Tanner',
+      role: 'Coordinator',
       city: 'Cape Town',
       country: 'South Africa',
-      bio: 'Vintage scrambler fan, ocean driver, and dedicated advocate for showcasing local South African coffee culture.',
+      bio: 'Coordinator',
       imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=250&auto=format&fit=crop'
     },
     {
-      name: 'Alex Mercer',
-      role: 'Co-Host & Logistics',
+      name: 'Emily',
+      role: 'Photographer',
       city: 'New York City',
       country: 'USA',
-      bio: 'Brooklyn local on a mission to connect the five boroughs\' diverse rider groups, one coffee cup and conversation at a time.',
+      bio: 'Photographer',
       imageUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=250&auto=format&fit=crop'
     },
     {
-      name: 'Jess Harper',
-      role: 'Community Photographer',
+      name: 'Kim',
+      role: 'Networking/coordinator',
       city: 'New York City',
       country: 'USA',
-      bio: 'Professional lifestyle photographer capturing candid laughter, engine details, and warm sidewalk smiles at NYC socials.',
+      bio: 'Networking/coordinator',
       imageUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=250&auto=format&fit=crop'
-    },
-    {
-      name: 'Sven Lindner',
-      role: 'Lead Coordinator',
-      city: 'Munich',
-      country: 'Germany',
-      bio: 'Restores retro boxer-twin engines and organizes local midweek sidewalk meetings down quiet Bavarian streets.',
-      imageUrl: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=250&auto=format&fit=crop'
-    },
-    {
-      name: 'Chloe Bennett',
-      role: 'Melbourne Ambassador & Host',
-      city: 'Melbourne',
-      country: 'Australia',
-      bio: 'Excitedly curating local digital outreach and establishing our newest upcoming international sidewalk chapter.',
-      imageUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=250&auto=format&fit=crop'
     }
   ];
 
