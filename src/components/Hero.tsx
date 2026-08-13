@@ -3,6 +3,7 @@ import { ArrowRight, MapPin, Coffee, Users, ChevronLeft, ChevronRight, Camera } 
 import { motion, AnimatePresence } from 'motion/react';
 import siteText from '../siteText.json';
 
+import bannerFullSend from '../assets/banner/banner.png';
 import banner1 from '../assets/banner/moto_banner_1.jpg';
 import banner2 from '../assets/banner/moto_banner_2.jpg';
 
@@ -11,6 +12,10 @@ interface HeroProps {
 }
 
 const HERO_IMAGES = [
+  {
+    url: bannerFullSend,
+    caption: 'Full-Send Meet — Argyll Motorsports, No Invite x Shiny Side Connects, Tipsy Moose'
+  },
   {
     url: banner1,
     caption: 'Classic motorcycle lineup at the Sidewalk Meetup'
