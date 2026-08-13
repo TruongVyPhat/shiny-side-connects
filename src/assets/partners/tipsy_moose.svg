@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <!-- Outer Circular Border & Background -->
+  <circle cx="200" cy="200" r="190" fill="#fbf5eb" stroke="#d5a56d" stroke-width="8"/>
+  <circle cx="200" cy="200" r="176" fill="none" stroke="#4a1c14" stroke-width="3" stroke-dasharray="350 40 180 40"/>
+
+  <!-- Stars / Sparkles -->
+  <path d="M 160 100 L 163 90 L 166 100 L 176 103 L 166 106 L 163 116 L 160 106 L 150 103 Z" fill="#4a1c14"/>
+  <path d="M 330 160 L 332 153 L 334 160 L 341 162 L 334 164 L 332 171 L 330 164 L 323 162 Z" fill="#4a1c14"/>
+
+  <!-- Left Beer Mug on Antler -->
+  <g transform="translate(60, 75) rotate(-15) scale(0.65)">
+    <!-- Beer Body -->
+    <rect x="20" y="30" width="45" height="55" rx="6" fill="#f59e0b" stroke="#4a1c14" stroke-width="4"/>
+    <line x1="33" y1="35" x2="33" y2="78" stroke="#4a1c14" stroke-width="3" stroke-linecap="round"/>
+    <line x1="47" y1="35" x2="47" y2="78" stroke="#4a1c14" stroke-width="3" stroke-linecap="round"/>
+    <!-- Handle -->
+    <path d="M 20 40 C 0 40 0 70 20 70" fill="none" stroke="#4a1c14" stroke-width="6" stroke-linecap="round"/>
+    <!-- Foam Head -->
+    <path d="M 15 30 C 15 15 30 10 38 18 C 45 10 60 12 65 22 C 72 24 70 34 65 35 Z" fill="#ffffff" stroke="#4a1c14" stroke-width="3.5"/>
+  </g>
+
+  <!-- Right Beer Mug on Antler -->
+  <g transform="translate(290, 60) rotate(15) scale(0.65)">
+    <!-- Beer Body -->
+    <rect x="20" y="30" width="45" height="55" rx="6" fill="#f59e0b" stroke="#4a1c14" stroke-width="4"/>
+    <line x1="33" y1="35" x2="33" y2="78" stroke="#4a1c14" stroke-width="3" stroke-linecap="round"/>
+    <line x1="47" y1="35" x2="47" y2="78" stroke="#4a1c14" stroke-width="3" stroke-linecap="round"/>
+    <!-- Handle -->
+    <path d="M 65 40 C 85 40 85 70 65 70" fill="none" stroke="#4a1c14" stroke-width="6" stroke-linecap="round"/>
+    <!-- Foam Head -->
+    <path d="M 15 30 C 15 15 30 10 38 18 C 45 10 60 12 65 22 C 72 24 70 34 65 35 Z" fill="#ffffff" stroke="#4a1c14" stroke-width="3.5"/>
+  </g>
+
+  <!-- Illustrated Moose Antlers & Head -->
+  <!-- Antlers -->
+  <path d="M 200 170 
+           C 160 150 120 150 75 125 
+           C 50 110 50 90 70 110 
+           C 90 125 100 95 120 145 
+           C 150 155 180 165 200 170 Z" fill="#4a1c14"/>
+  <path d="M 200 170 
+           C 240 150 280 150 325 125 
+           C 350 110 350 90 330 110 
+           C 310 125 300 95 280 145 
+           C 250 155 220 165 200 170 Z" fill="#4a1c14"/>
+  <!-- Antler Broad Palms -->
+  <path d="M 75 125 C 45 100 55 160 110 175 C 95 150 85 135 75 125 Z" fill="#4a1c14"/>
+  <path d="M 325 125 C 355 100 345 160 290 175 C 305 150 315 135 325 125 Z" fill="#4a1c14"/>
+
+  <!-- Moose Head / Face -->
+  <path d="M 175 165 C 160 185 155 210 165 245 C 175 270 190 275 200 275 C 210 275 225 270 235 245 C 245 210 240 185 225 165 Z" fill="#4a1c14"/>
+  <!-- Ears -->
+  <path d="M 160 165 C 130 165 135 185 155 180 Z" fill="#4a1c14"/>
+  <path d="M 240 165 C 270 165 265 185 245 180 Z" fill="#4a1c14"/>
+  <!-- Eyes & Muzzle Highlights (Negative Space) -->
+  <ellipse cx="178" cy="195" rx="5" ry="3" fill="#fbf5eb" transform="rotate(-15, 178, 195)"/>
+  <ellipse cx="222" cy="195" rx="5" ry="3" fill="#fbf5eb" transform="rotate(15, 222, 195)"/>
+  <ellipse cx="190" cy="255" rx="3.5" ry="5" fill="#fbf5eb"/>
+  <ellipse cx="210" cy="255" rx="3.5" ry="5" fill="#fbf5eb"/>
+  <!-- Smile line -->
+  <path d="M 188 266 Q 200 272 212 266" stroke="#fbf5eb" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+
+  <!-- Vintage Script "Tipsy Moose" Typography -->
+  <g id="tipsy-moose-text">
+    <text x="200" y="325" font-family="'Brush Script MT', 'Great Vibes', 'Pacifico', 'Caveat', cursive, sans-serif" font-size="52" font-weight="bold" font-style="italic" fill="#4a1c14" text-anchor="middle" letter-spacing="1">
+      Tipsy Moose
+    </text>
+  </g>
+</svg>

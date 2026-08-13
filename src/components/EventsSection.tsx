@@ -10,7 +10,6 @@ interface EventItem {
   date: string;
   time: string;
   description: string;
-  venue: string;
   address: string;
   coordinates: string;
   directionsUrl: string;
@@ -19,56 +18,28 @@ interface EventItem {
 
 const EVENTS_DATA: EventItem[] = [
   {
-    id: 'edmonton-season-opener',
-    title: 'Bike Night season opener',
+    id: 'mid-season-madness',
+    title: 'Mid season madness night meet',
     status: 'Featured',
     date: 'Saturday, July 11, 2026',
-    time: '6:00 PM - 10:00 PM',
-    description: 'Get ready for the first community gathering in Edmonton! We are hosting our highly anticipated season opener, bringing custom moto builders, scooter riders, vintage collectors, and local espresso lovers together side-by-side. Like always, zero pressure and all smiles.',
-    venue: 'StorageMart',
+    time: '5:00 PM - 9:00 PM',
+    description: 'Get ready for our mid-season night meet in Edmonton! Bringing custom moto builders, scooter riders, vintage collectors, and local enthusiast culture together side-by-side. Zero pressure and all smiles.',
     address: '13303 Fort Rd NW, Edmonton, AB T5A 1C3, Canada',
     coordinates: '53.5936° N, 113.4357° W',
     directionsUrl: 'https://www.google.com/maps/search/?api=1&query=StorageMart+13303+Fort+Rd+NW+Edmonton+AB+T5A+1C3+Canada',
     admission: '100% FREE & OPEN'
   },
   {
-    id: 'toronto-espresso-curb',
-    title: 'Sidewalk Coffee & Sparkplugs',
+    id: 'full-send-august',
+    title: 'Full-send august',
     status: 'Upcoming',
-    date: 'Saturday, August 15, 2026',
-    time: '7:00 PM - 11:00 PM',
-    description: 'Our classic home circle on the Toronto waterfront. Meet us by the curb with some fresh pour-over espresso, good vibes, and beautiful vintage builds. Drive, ride, or simply walk over to meet great minds.',
-    venue: 'Cherry Beach Curb',
-    address: '1 Cherry St, Toronto, ON M5A 0B1, Canada',
-    coordinates: '43.6371° N, 79.3444° W',
-    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=Cherry+Beach+Toronto+ON+M5A+0B1+Canada',
-    admission: 'FREE POUR-OVER COFFEE'
-  },
-  {
-    id: 'calgary-autumn-sunset',
-    title: 'Autumn Cafe Ride & Social',
-    status: 'Upcoming',
-    date: 'Saturday, September 12, 2026',
-    time: '5:00 PM - 9:00 PM',
-    description: 'Celebrate the shifting season with a collective loop around the foothill passes, concluding with a sunset social, hot brew, and warm conversations in Calgary\'s creative design district.',
-    venue: 'Analog Coffee Parking',
-    address: '740 17 Ave SW, Calgary, AB T2S 0B7, Canada',
-    coordinates: '51.0379° N, 114.0784° W',
-    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=Analog+Coffee+740+17+Ave+SW+Calgary+AB+T2S+0B7',
+    date: 'Sunday, August 15, 2026',
+    time: '12:00 PM - 4:00 PM',
+    description: 'Join us for our high-energy August meet in Edmonton. Meet us by the curb with fresh brews, good vibes, and beautiful builds. Drive, ride, or walk over to connect with local riders.',
+    address: 'Tipsy Moose Pub & Kitchen | 6464 Cartmell Pl SW, Edmonton',
+    coordinates: '53.4180° N, 113.5280° W',
+    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=Tipsy+Moose+Pub+%26+Kitchen+6464+Cartmell+Pl+SW+Edmonton',
     admission: '100% FREE & OPEN'
-  },
-  {
-    id: 'midweek-moped-madness',
-    title: 'Midweek Curb Club',
-    status: 'Midweek Meetup',
-    date: 'Wednesday, October 14, 2026',
-    time: '6:30 PM - 9:30 PM',
-    description: 'Breaking the midweek grind! Join us for a casual Wednesday evening hangout. Standard protocol: warm coffee cups, zero egos, and endless moped, scooter, and vintage motorcycle stories.',
-    venue: 'Sidewalk Caffe',
-    address: '10130 104 St NW, Edmonton, AB T5J 1A7, Canada',
-    coordinates: '53.5422° N, 113.4991° W',
-    directionsUrl: 'https://www.google.com/maps/search/?api=1&query=Sidewalk+Caffe+10130+104+St+NW+Edmonton+AB+T5J+1A7',
-    admission: 'BYO COFFEE / CHAT'
   }
 ];
 
@@ -219,47 +190,36 @@ export default function EventsSection() {
                         </p>
                       </div>
                     </div>
-                    {/* Impressive Location Presentation with Increased Font Sizing */}
-                     <div className="bg-white/[0.03] border border-white/10 p-6 sm:p-8 rounded-sm space-y-6 mt-6">
-                       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:items-center">
-                         
-                         {/* Column 1: Venue Label & Large Branding */}
-                         <div className="md:col-span-5 space-y-2 border-l-2 border-white/35 pl-4 md:pl-6">
-                           <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-400 block font-semibold">
-                             {siteText.events.venueLabel}
-                           </span>
-                           <h4 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-none">
-                             {selectedEvent.venue}
-                           </h4>
-                           <div className="flex items-center gap-1.5 text-xs sm:text-sm font-mono text-neutral-300">
-                             <span>COORDINATES :</span>
-                             <span className="text-white font-medium">{selectedEvent.coordinates}</span>
-                           </div>
-                         </div>
- 
-                         {/* Column 2: Exact Street Address (Enlarged) */}
-                         <div className="md:col-span-4 space-y-2 border-l border-white/15 md:pl-8">
-                           <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-400 block font-semibold">
-                             {siteText.events.streetAddressLabel}
-                           </span>
-                           <p className="text-lg sm:text-xl lg:text-2xl text-white font-medium tracking-wide leading-tight sm:leading-snug">
-                             {selectedEvent.address.split(',')[0]},<br />
-                             {selectedEvent.address.split(',').slice(1).join(',')}
-                           </p>
-                         </div>
- 
-                         {/* Column 3: Directions Action Trigger */}
-                         <div className="md:col-span-3 flex md:justify-end">
-                           <a
-                             href={selectedEvent.directionsUrl}
-                             target="_blank"
-                             rel="noopener noreferrer"
-                             className="inline-flex w-full md:w-auto items-center justify-center bg-white text-black hover:bg-neutral-100 px-8 py-4 text-xs sm:text-sm font-extrabold uppercase tracking-widest transition-all duration-300 font-mono shadow-md whitespace-nowrap border-2 border-white hover:border-neutral-100 hover:scale-[1.02] transform cursor-pointer"
-                           >
-                             <Navigation size={14} className="mr-1.5 shrink-0" />
-                             {siteText.events.buttonDirections}
-                           </a>
-                         </div>
+                    {/* Location Presentation with Address & Directions */}
+                    <div className="bg-white/[0.03] border border-white/10 p-6 sm:p-8 rounded-sm space-y-6 mt-6">
+                      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:items-center">
+                        
+                        {/* Address & Coordinates */}
+                        <div className="md:col-span-8 space-y-2 border-l-2 border-white/35 pl-4 md:pl-6">
+                          <span className="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-neutral-400 block font-semibold">
+                            {siteText.events.streetAddressLabel}
+                          </span>
+                          <p className="text-xl sm:text-2xl lg:text-3xl font-serif font-extrabold text-white tracking-tight leading-snug">
+                            {selectedEvent.address}
+                          </p>
+                          <div className="flex items-center gap-1.5 text-xs sm:text-sm font-mono text-neutral-300 pt-1">
+                            <span>COORDINATES :</span>
+                            <span className="text-white font-medium">{selectedEvent.coordinates}</span>
+                          </div>
+                        </div>
+
+                        {/* Directions Action Trigger */}
+                        <div className="md:col-span-4 flex md:justify-end">
+                          <a
+                            href={selectedEvent.directionsUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex w-full md:w-auto items-center justify-center bg-white text-black hover:bg-neutral-100 px-8 py-4 text-xs sm:text-sm font-extrabold uppercase tracking-widest transition-all duration-300 font-mono shadow-md whitespace-nowrap border-2 border-white hover:border-neutral-100 hover:scale-[1.02] transform cursor-pointer"
+                          >
+                            <Navigation size={14} className="mr-1.5 shrink-0" />
+                            {siteText.events.buttonDirections}
+                          </a>
+                        </div>
 
                       </div>
                     </div>

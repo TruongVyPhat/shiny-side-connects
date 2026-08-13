@@ -11,54 +11,29 @@ interface EventDateMapping {
   title: string;
   status: string;
   time: string;
-  venue: string;
   address: string;
 }
 
 const EVENTS_CALENDAR_DATA: EventDateMapping[] = [
   {
     year: 2026,
-    month: 6, // July
+    month: 6, // July (0-indexed)
     day: 11,
-    eventId: 'edmonton-season-opener',
-    title: 'Bike Night season opener',
+    eventId: 'mid-season-madness',
+    title: 'Mid season madness night meet',
     status: 'Featured',
-    time: '6:00 PM - 10:00 PM',
-    venue: 'StorageMart',
-    address: '13303 Fort Rd NW, Edmonton, AB'
-  },
-  {
-    year: 2026,
-    month: 7, // August
-    day: 15,
-    eventId: 'toronto-espresso-curb',
-    title: 'Sidewalk Coffee & Sparkplugs',
-    status: 'Upcoming',
-    time: '7:00 PM - 11:00 PM',
-    venue: 'Cherry Beach Curb',
-    address: '1 Cherry St, Toronto, ON'
-  },
-  {
-    year: 2026,
-    month: 8, // September
-    day: 12,
-    eventId: 'calgary-autumn-sunset',
-    title: 'Autumn Cafe Ride & Social',
-    status: 'Upcoming',
     time: '5:00 PM - 9:00 PM',
-    venue: 'Analog Coffee Parking',
-    address: '740 17 Ave SW, Calgary, AB'
+    address: '13303 Fort Rd NW, Edmonton, AB T5A 1C3, Canada'
   },
   {
     year: 2026,
-    month: 9, // October
-    day: 14,
-    eventId: 'midweek-moped-madness',
-    title: 'Midweek Curb Club',
-    status: 'Midweek Meetup',
-    time: '6:30 PM - 9:30 PM',
-    venue: 'Sidewalk Caffe',
-    address: '10130 104 St NW, Edmonton, AB'
+    month: 7, // August (0-indexed)
+    day: 15,
+    eventId: 'full-send-august',
+    title: 'Full-send august',
+    status: 'Upcoming',
+    time: '12:00 PM - 4:00 PM',
+    address: 'Tipsy Moose Pub & Kitchen | 6464 Cartmell Pl SW, Edmonton'
   }
 ];
 
@@ -69,6 +44,32 @@ const MONTH_NAMES = [
 
 const DAYS_OF_WEEK = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
+const getUpcomingEventsCount = (): number => {
+  const now = new Date();
+  return EVENTS_CALENDAR_DATA.filter((event) => {
+    let hour = 23;
+    let minute = 59;
+    
+    if (event.time && event.time.includes('-')) {
+      const parts = event.time.split('-');
+      const endTimeStr = parts[parts.length - 1].trim();
+      const match = endTimeStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
+      if (match) {
+        let h = parseInt(match[1], 10);
+        const m = parseInt(match[2], 10);
+        const ampm = match[3].toUpperCase();
+        if (ampm === 'PM' && h < 12) h += 12;
+        if (ampm === 'AM' && h === 12) h = 0;
+        hour = h;
+        minute = m;
+      }
+    }
+    
+    const eventEndDate = new Date(event.year, event.month, event.day, hour, minute, 59);
+    return eventEndDate.getTime() > now.getTime();
+  }).length;
+};
+
 export default function FloatingCalendar() {
   const [isOpen, setIsOpen] = useState(false);
   const [currentYear, setCurrentYear] = useState(2026);
@@ -76,6 +77,8 @@ export default function FloatingCalendar() {
   const [currentMonth, setCurrentMonth] = useState(6);
   const [selectedDay, setSelectedDay] = useState<number | null>(11);
   const [selectedEvent, setSelectedEvent] = useState<EventDateMapping | null>(EVENTS_CALENDAR_DATA[0]);
+
+  const upcomingCount = getUpcomingEventsCount();
 
   // Handle auto-selecting events when the month changes
   useEffect(() => {
@@ -157,7 +160,7 @@ export default function FloatingCalendar() {
             >
               {/* Highlight Notification badge */}
               <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center bg-amber-500 text-black text-[10px] font-bold rounded-none font-sans border border-black animate-bounce">
-                4
+                {upcomingCount}
               </span>
               <CalendarIcon size={16} className="text-amber-400 group-hover:rotate-12 transition-transform duration-300" />
               <span>{siteText.floatingCalendar.triggerText}</span>
@@ -293,7 +296,7 @@ export default function FloatingCalendar() {
                           </div>
                           <div className="flex items-center gap-1.5">
                             <MapPin size={11} className="text-amber-400 shrink-0" />
-                            <span className="truncate">{selectedEvent.venue} — {selectedEvent.address}</span>
+                            <span className="truncate">{selectedEvent.address}</span>
                           </div>
                         </div>
                         <button

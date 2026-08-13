@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <!-- White Background Circle -->
+  <circle cx="200" cy="200" r="190" fill="#ffffff" stroke="#111111" stroke-width="12"/>
+  <circle cx="200" cy="200" r="172" fill="none" stroke="#111111" stroke-width="3.5"/>
+
+  <!-- Centered Bold Vintage Slab Serif "IDLE" -->
+  <text x="200" y="240" font-family="'Playfair Display', 'Cinzel', 'Georgia', serif" font-size="122" font-weight="900" fill="#111111" text-anchor="middle" letter-spacing="4">
+    IDLE
+  </text>
+
+  <!-- Triple horizontal bars on left -->
+  <line x1="60" y1="272" x2="85" y2="272" stroke="#111111" stroke-width="2.5" stroke-linecap="square"/>
+  <line x1="60" y1="278" x2="85" y2="278" stroke="#111111" stroke-width="2.5" stroke-linecap="square"/>
+  <line x1="60" y1="284" x2="85" y2="284" stroke="#111111" stroke-width="2.5" stroke-linecap="square"/>
+
+  <!-- Text "KITCHEN & COFFEE" -->
+  <text x="200" y="283" font-family="'Plus Jakarta Sans', 'Oswald', 'Impact', sans-serif" font-size="19" font-weight="700" fill="#111111" text-anchor="middle" letter-spacing="6">
+    KITCHEN &amp; COFFEE
+  </text>
+
+  <!-- Triple horizontal bars on right -->
+  <line x1="315" y1="272" x2="340" y2="272" stroke="#111111" stroke-width="2.5" stroke-linecap="square"/>
+  <line x1="315" y1="278" x2="340" y2="278" stroke="#111111" stroke-width="2.5" stroke-linecap="square"/>
+  <line x1="315" y1="284" x2="340" y2="284" stroke="#111111" stroke-width="2.5" stroke-linecap="square"/>
+</svg>

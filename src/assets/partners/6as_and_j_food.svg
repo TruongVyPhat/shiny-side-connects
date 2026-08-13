@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <filter id="shadow6a" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer Sunburst Rays (Philippine Flag inspired: Blue, Red, White with Gold Stars) -->
+  <!-- Top Ray (Blue) -->
+  <polygon points="200,20 230,120 200,105 170,120" fill="#0038a8" stroke="#fcd116" stroke-width="2"/>
+  <polygon points="200,20 215,80 200,105 185,80" fill="#002b82"/>
+  
+  <!-- Top-Right Ray (Blue) -->
+  <polygon points="327,73 280,160 260,135 240,170" fill="#0038a8"/>
+  <polygon points="327,73 295,120 260,135 280,100" fill="#1e40af"/>
+
+  <!-- Right Ray (Red / Blue top) -->
+  <polygon points="380,200 280,230 295,200 280,170" fill="#ce1126"/>
+  <polygon points="380,200 320,185 295,200 320,215" fill="#991b1b"/>
+
+  <!-- Bottom-Right Ray (Red) -->
+  <polygon points="327,327 240,230 260,265 280,240" fill="#ce1126"/>
+  <polygon points="327,327 280,300 260,265 295,280" fill="#b91c1c"/>
+
+  <!-- Bottom Ray (Red) -->
+  <polygon points="200,380 170,280 200,295 230,280" fill="#ce1126"/>
+  <polygon points="200,380 185,320 200,295 215,320" fill="#991b1b"/>
+
+  <!-- Bottom-Left Ray (White with Gold Star) -->
+  <polygon points="73,327 160,240 140,265 120,230" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <polygon points="73,327 120,280 140,265 105,300" fill="#ffffff"/>
+  <!-- Star on Bottom-Left Ray -->
+  <polygon points="95,300 98,307 105,307 100,312 102,319 95,314 88,319 90,312 85,307 92,307" fill="#fcd116"/>
+
+  <!-- Left Ray (White with Gold Star) -->
+  <polygon points="20,200 120,170 105,200 120,230" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <polygon points="20,200 80,215 105,200 80,185" fill="#ffffff"/>
+  <!-- Star on Left Ray -->
+  <polygon points="50,200 53,206 60,206 55,210 57,217 50,212 43,217 45,210 40,206 47,206" fill="#fcd116"/>
+
+  <!-- Top-Left Ray (White with Gold Star) -->
+  <polygon points="73,73 120,170 140,135 160,160" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <polygon points="73,73 105,100 140,135 120,120" fill="#ffffff"/>
+  <!-- Star on Top-Left Ray -->
+  <polygon points="95,100 98,107 105,107 100,112 102,119 95,114 88,119 90,112 85,107 92,107" fill="#fcd116"/>
+
+  <!-- Center Circle with Shadow -->
+  <circle cx="200" cy="200" r="100" fill="#121e3d" stroke="#fcd116" stroke-width="3" filter="url(#shadow6a)"/>
+  <circle cx="200" cy="200" r="94" fill="#162347"/>
+
+  <!-- Stylized Tribal Flame Heart -->
+  <path d="M 200 190 C 190 175 160 160 160 138 C 160 122 173 112 188 112 C 196 112 200 118 200 118 C 200 118 204 112 212 112 C 227 112 240 122 240 138 C 240 160 210 175 200 190 Z" 
+        fill="none" stroke="#ef4444" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 175 125 C 168 135 170 152 182 162" fill="none" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 225 125 C 232 135 230 152 218 162" fill="none" stroke="#f97316" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Cloche / Platter in Heart -->
+  <!-- Cloche Dome -->
+  <path d="M 182 162 A 18 18 0 0 1 218 162 Z" fill="#ffffff"/>
+  <ellipse cx="200" cy="162" rx="22" ry="3.5" fill="#e2e8f0"/>
+  <!-- Cloche Handle / Cutlery -->
+  <circle cx="200" cy="144" r="2.5" fill="#ffffff"/>
+  <!-- Small fork, spoon, knife silhouette -->
+  <path d="M 193 135 L 193 143 M 191 135 L 191 138 M 195 135 L 195 138" stroke="#ffffff" stroke-width="1" stroke-linecap="round"/>
+  <path d="M 200 135 L 200 143 M 198 135 A 2 3 0 0 1 202 135" stroke="#ffffff" stroke-width="1"/>
+  <path d="M 207 135 L 207 143 M 207 135 L 209 137 L 207 139" stroke="#ffffff" stroke-width="1"/>
+
+  <!-- Text: 6A'S & J FOOD -->
+  <text x="200" y="222" font-family="'Impact', 'Arial Black', sans-serif" font-size="21" font-weight="900" fill="#22c55e" text-anchor="middle" letter-spacing="1">
+    6A'S &amp; J FOOD
+  </text>
+  
+  <!-- Subtitle: Pilipino food taste lover's -->
+  <text x="200" y="240" font-family="'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" fill="#ffffff" text-anchor="middle" letter-spacing="0.5" opacity="0.9">
+    Pilipino food taste lover's
+  </text>
+</svg>

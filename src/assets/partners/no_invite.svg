@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <!-- Top Left: "NO" with square period -->
+  <text x="25" y="170" font-family="'Impact', 'Arial Black', sans-serif" font-size="160" font-weight="900" fill="#111111" letter-spacing="-2">
+    NO
+  </text>
+  <!-- Square under N -->
+  <rect x="25" y="185" width="22" height="22" fill="#111111"/>
+
+  <!-- Top Right: Aerodynamic Sport Motorcycle Silhouette -->
+  <g transform="translate(250, 15) scale(0.62)">
+    <!-- Rear Wheel -->
+    <circle cx="120" cy="270" r="65" fill="#111111"/>
+    <circle cx="120" cy="270" r="45" fill="#ffffff"/>
+    <circle cx="120" cy="270" r="16" fill="#111111"/>
+    <!-- Rear Spokes -->
+    <path d="M 120 225 L 120 315 M 75 270 L 165 270 M 88 238 L 152 302 M 88 302 L 152 238" stroke="#111111" stroke-width="7"/>
+    <circle cx="120" cy="270" r="28" fill="#111111"/>
+
+    <!-- Front Wheel -->
+    <circle cx="430" cy="270" r="65" fill="#111111"/>
+    <circle cx="430" cy="270" r="45" fill="#ffffff"/>
+    <circle cx="430" cy="270" r="16" fill="#111111"/>
+    <!-- Front Spokes -->
+    <path d="M 430 225 L 430 315 M 385 270 L 475 270 M 398 238 L 462 302 M 398 302 L 462 238" stroke="#111111" stroke-width="7"/>
+    <circle cx="430" cy="270" r="28" fill="#111111"/>
+
+    <!-- Swingarm and Rear Frame -->
+    <polygon points="120,270 230,220 220,250 140,290" fill="#111111"/>
+
+    <!-- Engine / Central Block -->
+    <polygon points="200,200 320,180 340,240 230,270" fill="#111111"/>
+    
+    <!-- Sportbike Body / Fairings -->
+    <!-- Tail Section -->
+    <polygon points="90,140 230,170 190,130 110,130" fill="#111111"/>
+    <!-- Tank & Main Fairing -->
+    <path d="M 190 130 C 220 90 270 90 310 120 L 390 130 L 430 90 L 360 80 C 310 60 260 70 210 110 Z" fill="#111111"/>
+    <!-- Front Fairing Nose & Windscreen -->
+    <polygon points="310,120 370,125 435,90 380,60 320,80" fill="#111111"/>
+    <!-- Windshield Peak -->
+    <polygon points="380,60 410,20 340,75" fill="#111111"/>
+    <!-- Front Fork -->
+    <polygon points="370,125 430,270 415,275 355,130" fill="#111111"/>
+    
+    <!-- Negative Space Cutouts on Bodywork -->
+    <polygon points="260,110 320,135 285,150" fill="#ffffff"/>
+    <polygon points="335,140 370,145 355,160" fill="#ffffff"/>
+  </g>
+
+  <!-- Thick Horizontal Divider Line -->
+  <rect x="25" y="200" width="550" height="24" fill="#111111"/>
+
+  <!-- "INVITE" in Bold Red Block Letters -->
+  <text x="25" y="335" font-family="'Impact', 'Arial Black', sans-serif" font-size="132" font-weight="900" fill="#d9232a" letter-spacing="4">
+    INVITE
+  </text>
+
+  <!-- "EST. 2019" -->
+  <text x="300" y="385" font-family="'Impact', 'Arial Black', sans-serif" font-size="34" font-weight="900" fill="#111111" text-anchor="middle" letter-spacing="4">
+    EST. 2019
+  </text>
+</svg>
