@@ -3,9 +3,8 @@ import { ArrowRight, MapPin, Coffee, Users, ChevronLeft, ChevronRight, Camera } 
 import { motion, AnimatePresence } from 'motion/react';
 import siteText from '../siteText.json';
 
-import bannerFullSend from '../assets/banner/banner.png';
-import banner1 from '../assets/banner/moto_banner_1.jpg';
-import banner2 from '../assets/banner/moto_banner_2.jpg';
+import banner1 from '../assets/banner/banner_01.png';
+import banner2 from '../assets/banner/banner_02.png';
 
 interface HeroProps {
   onNavigate: (section: string) => void;
@@ -13,16 +12,12 @@ interface HeroProps {
 
 const HERO_IMAGES = [
   {
-    url: bannerFullSend,
+    url: banner1,
     caption: 'Full-Send Meet — Argyll Motorsports, No Invite x Shiny Side Connects, Tipsy Moose'
   },
   {
-    url: banner1,
-    caption: 'Classic motorcycle lineup at the Sidewalk Meetup'
-  },
-  {
     url: banner2,
-    caption: 'Curbside vintage builds & cafe racers side-by-side'
+    caption: 'Shiny Side Society — Est. 2025 Community Meetup'
   }
 ];
 
