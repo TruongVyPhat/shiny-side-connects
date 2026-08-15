@@ -1,4 +1,6 @@
 import { City, MerchItem } from './types';
+import merchTeeImg from './assets/images/merch_tee_1781624051226.jpg';
+import merchCapImg from './assets/images/merch_cap_1781624065776.jpg';
 
 export const CITIES_DATA: City[] = [
   {
@@ -162,7 +164,7 @@ export const MERCH_DATA: MerchItem[] = [
     name: 'Shiny Side Connects Signature Tee',
     price: 36,
     description: 'Our iconic signature t-shirt. Premium weight vintage wash black cotton with crisp white screen-printed chest block typography. Proudly built for comfort on long rides.',
-    imageUrl: '/src/assets/images/merch_tee_1781624051226.jpg',
+    imageUrl: merchTeeImg,
     sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
     category: 'Apparel',
     inStock: true
@@ -172,7 +174,7 @@ export const MERCH_DATA: MerchItem[] = [
     name: 'Script Dad Hat',
     price: 30,
     description: 'Unstructured vintage washed cotton cap with custom cursive script chain-stitch embroidery on the front panel. Antique brass slide buckle closure.',
-    imageUrl: '/src/assets/images/merch_cap_1781624065776.jpg',
+    imageUrl: merchCapImg,
     sizes: ['One Size Fits All'],
     category: 'Headwear',
     inStock: true

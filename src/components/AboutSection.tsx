@@ -1,10 +1,8 @@
 import { Star, Heart, ShieldAlert } from 'lucide-react';
 import siteText from '../siteText.json';
+import communityImageUrl from '../assets/images/community_laughing_1781624034619.jpg';
 
 export default function AboutSection() {
-
-  // Use the exact generated image path
-  const communityImageUrl = '/src/assets/images/community_laughing_1781624034619.jpg';
 
   const manifestos = [
     {
