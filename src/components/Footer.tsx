@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Instagram, Facebook, Send, Check, MessageSquare, Users, Calendar } from 'lucide-react';
 import siteText from '../siteText.json';
-import logoImg from '../assets/logo.png';
+import logoImg from '../assets/footer_logo.png';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
