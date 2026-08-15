@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Menu, X, Radio } from 'lucide-react';
 import siteText from '../siteText.json';
 import logoNoBg from '../assets/logo_no_bg.png';
+import { getCanadaCurrentTime, CanadaTimeInfo } from '../utils/canadaTime';
 
 interface NavbarProps {
   activeSection: string;
@@ -10,8 +11,17 @@ interface NavbarProps {
   onOpenCart?: () => void;
 }
 
-export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: NavbarProps) {
+export default function Navbar({ activeSection, onNavigate }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [canadaTime, setCanadaTime] = useState<CanadaTimeInfo>(getCanadaCurrentTime());
+
+  // Update live clock every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCanadaTime(getCanadaCurrentTime());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const navItems = siteText.navbar.menuItems;
 
@@ -21,15 +31,33 @@ export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: 
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-black/35 backdrop-blur-md border-b border-white/10 font-sans">
+    <nav className="sticky top-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/10 font-sans">
+      {/* Top micro ticker for Canada Time */}
+      <div className="bg-neutral-950/90 border-b border-white/5 py-1 px-4 sm:px-8 text-[11px] font-mono text-neutral-400 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+          <span className="text-neutral-300 font-semibold">CANADA (EDMONTON, AB)</span>
+          <span className="text-white font-bold">{canadaTime.formattedDate}</span>
+          <span className="text-neutral-400 hidden sm:inline">• {canadaTime.timeString} {canadaTime.timezoneAbbr}</span>
+        </div>
+        <button 
+          onClick={() => handleNavClick('events')}
+          className="flex items-center gap-1.5 text-red-400 hover:text-red-300 font-bold uppercase tracking-wider transition-colors cursor-pointer group"
+        >
+          <Radio size={11} className="text-red-400 animate-pulse" />
+          <span>1 MEETUP TODAY</span>
+          <span className="text-[9px] bg-red-600/30 text-red-300 border border-red-500/40 px-1 py-0.5 ml-1 hidden xs:inline">VIEW</span>
+        </button>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-20 items-center">
+        <div className="flex justify-between h-16 items-center">
           {/* Logo */}
           <div 
             onClick={() => handleNavClick('hero')} 
             className="flex items-center space-x-3 cursor-pointer group"
           >
-            <div className="h-10 w-10 flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105 duration-300">
+            <div className="h-9 w-9 flex items-center justify-center overflow-hidden transition-transform group-hover:scale-105 duration-300">
               <img 
                 src={logoNoBg} 
                 alt={siteText.navbar.logoAlt} 
@@ -48,13 +76,18 @@ export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: 
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-[13px] font-semibold uppercase tracking-[0.15em] transition-colors py-2 border-b-2 duration-200 ${
+                className={`text-[13px] font-semibold uppercase tracking-[0.15em] transition-colors py-2 border-b-2 duration-200 relative ${
                   activeSection === item.id 
                     ? 'border-white text-white' 
                     : 'border-transparent text-neutral-300 hover:text-white hover:border-white/30'
                 }`}
               >
                 {item.label}
+                {item.id === 'events' && (
+                  <span className="absolute -top-1.5 -right-3 px-1 py-0.2 bg-red-600 text-white text-[8px] font-mono font-bold leading-none animate-pulse">
+                    TODAY
+                  </span>
+                )}
               </button>
             ))}
           </div>
@@ -81,13 +114,18 @@ export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: 
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
-                className={`text-left text-xs uppercase tracking-[0.2em] font-bold py-3 px-4 border-l-4 transition-colors duration-150 ${
+                className={`text-left text-xs uppercase tracking-[0.2em] font-bold py-3 px-4 border-l-4 transition-colors duration-150 flex items-center justify-between ${
                   activeSection === item.id 
                     ? 'border-white bg-white/10 text-white' 
                     : 'border-transparent text-neutral-400 hover:text-white hover:bg-white/5'
                 }`}
               >
-                {item.label}
+                <span>{item.label}</span>
+                {item.id === 'events' && (
+                  <span className="bg-red-600 text-white px-2 py-0.5 text-[9px] font-mono font-bold animate-pulse">
+                    1 EVENT TODAY
+                  </span>
+                )}
               </button>
             ))}
           </div>
@@ -96,3 +134,4 @@ export default function Navbar({ activeSection, onNavigate, cart, onOpenCart }: 
     </nav>
   );
 }
+

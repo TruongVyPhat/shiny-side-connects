@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar as CalendarIcon, X, ChevronLeft, ChevronRight, Clock, MapPin, Sparkles, ArrowRight } from 'lucide-react';
+import { Calendar as CalendarIcon, X, ChevronLeft, ChevronRight, Clock, MapPin, Sparkles, ArrowRight, Radio } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import siteText from '../siteText.json';
+import { getCanadaCurrentTime, getEventDayStatus, isDateTodayInCanada, CanadaTimeInfo } from '../utils/canadaTime';
 
 interface EventDateMapping {
   year: number;
@@ -17,16 +18,6 @@ interface EventDateMapping {
 const EVENTS_CALENDAR_DATA: EventDateMapping[] = [
   {
     year: 2026,
-    month: 6, // July (0-indexed)
-    day: 11,
-    eventId: 'mid-season-madness',
-    title: 'Mid season madness night meet',
-    status: 'Featured',
-    time: '5:00 PM - 9:00 PM',
-    address: '13303 Fort Rd NW, Edmonton, AB T5A 1C3, Canada'
-  },
-  {
-    year: 2026,
     month: 7, // August (0-indexed)
     day: 15,
     eventId: 'full-send-august',
@@ -34,6 +25,16 @@ const EVENTS_CALENDAR_DATA: EventDateMapping[] = [
     status: 'Upcoming',
     time: '12:00 PM - 4:00 PM',
     address: 'Tipsy Moose Pub & Kitchen | 6464 Cartmell Pl SW, Edmonton'
+  },
+  {
+    year: 2026,
+    month: 6, // July (0-indexed)
+    day: 11,
+    eventId: 'mid-season-madness',
+    title: 'Mid season madness night meet',
+    status: 'Featured',
+    time: '5:00 PM - 9:00 PM',
+    address: '13303 Fort Rd NW, Edmonton, AB T5A 1C3, Canada'
   }
 ];
 
@@ -45,40 +46,36 @@ const MONTH_NAMES = [
 const DAYS_OF_WEEK = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 const getUpcomingEventsCount = (): number => {
-  const now = new Date();
   return EVENTS_CALENDAR_DATA.filter((event) => {
-    let hour = 23;
-    let minute = 59;
-    
-    if (event.time && event.time.includes('-')) {
-      const parts = event.time.split('-');
-      const endTimeStr = parts[parts.length - 1].trim();
-      const match = endTimeStr.match(/(\d+):(\d+)\s*(AM|PM)/i);
-      if (match) {
-        let h = parseInt(match[1], 10);
-        const m = parseInt(match[2], 10);
-        const ampm = match[3].toUpperCase();
-        if (ampm === 'PM' && h < 12) h += 12;
-        if (ampm === 'AM' && h === 12) h = 0;
-        hour = h;
-        minute = m;
-      }
-    }
-    
-    const eventEndDate = new Date(event.year, event.month, event.day, hour, minute, 59);
-    return eventEndDate.getTime() > now.getTime();
+    const status = getEventDayStatus(event.year, event.month, event.day);
+    return status === 'today' || status === 'upcoming';
   }).length;
 };
 
 export default function FloatingCalendar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentYear, setCurrentYear] = useState(2026);
-  // Default to July (6) because that's when the first event happens in our 2026 dataset
-  const [currentMonth, setCurrentMonth] = useState(6);
-  const [selectedDay, setSelectedDay] = useState<number | null>(11);
-  const [selectedEvent, setSelectedEvent] = useState<EventDateMapping | null>(EVENTS_CALENDAR_DATA[0]);
+  const [canadaTime, setCanadaTime] = useState<CanadaTimeInfo>(getCanadaCurrentTime());
+  
+  const [currentYear, setCurrentYear] = useState(canadaTime.year);
+  const [currentMonth, setCurrentMonth] = useState(canadaTime.month);
+  const [selectedDay, setSelectedDay] = useState<number | null>(canadaTime.day);
+  
+  // Find today's event initially
+  const initialEvent = EVENTS_CALENDAR_DATA.find(
+    (ev) => ev.year === canadaTime.year && ev.month === canadaTime.month && ev.day === canadaTime.day
+  ) || EVENTS_CALENDAR_DATA[0];
+
+  const [selectedEvent, setSelectedEvent] = useState<EventDateMapping | null>(initialEvent);
 
   const upcomingCount = getUpcomingEventsCount();
+
+  // Keep Canada time updated in real time
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCanadaTime(getCanadaCurrentTime());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   // Handle auto-selecting events when the month changes
   useEffect(() => {
@@ -142,6 +139,10 @@ export default function FloatingCalendar() {
     }
   };
 
+  const isSelectedEventToday = selectedEvent
+    ? isDateTodayInCanada(selectedEvent.year, selectedEvent.month, selectedEvent.day)
+    : false;
+
   return (
     <>
       {/* Floating Action Button */}
@@ -159,11 +160,12 @@ export default function FloatingCalendar() {
               className="flex items-center gap-2 px-5 py-4 bg-black text-white border-2 border-white/20 shadow-2xl hover:border-white transition-all cursor-pointer font-mono text-xs uppercase tracking-widest relative group rounded-none"
             >
               {/* Highlight Notification badge */}
-              <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center bg-amber-500 text-black text-[10px] font-bold rounded-none font-sans border border-black animate-bounce">
+              <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center bg-red-600 text-white text-[10px] font-bold rounded-none font-sans border border-black animate-pulse">
                 {upcomingCount}
               </span>
               <CalendarIcon size={16} className="text-amber-400 group-hover:rotate-12 transition-transform duration-300" />
               <span>{siteText.floatingCalendar.triggerText}</span>
+              <span className="bg-red-950 border border-red-500/50 text-red-300 px-1.5 py-0.5 text-[9px] font-bold">TODAY</span>
             </motion.button>
           )}
         </AnimatePresence>
@@ -183,12 +185,12 @@ export default function FloatingCalendar() {
               <div className="absolute -left-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-black border border-white/10 z-10"></div>
               <div className="absolute -right-2 top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-black border border-white/10 z-10"></div>
 
-              <div className="p-5 space-y-5">
+              <div className="p-5 space-y-4">
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-white/10 pb-3">
                   <div className="flex items-center gap-1.5">
                     <Sparkles size={14} className="text-amber-400 animate-pulse" />
-                    <span className="font-mono text-xs uppercase tracking-widest text-neutral-400 font-semibold">
+                    <span className="font-mono text-xs uppercase tracking-widest text-neutral-300 font-semibold">
                       {siteText.floatingCalendar.headerText}
                     </span>
                   </div>
@@ -199,6 +201,15 @@ export default function FloatingCalendar() {
                   >
                     <X size={16} />
                   </button>
+                </div>
+
+                {/* Canada Time Live Status Strip */}
+                <div className="bg-neutral-900 border border-white/10 px-3 py-1.5 flex items-center justify-between text-[10px] font-mono text-neutral-400">
+                  <span className="flex items-center gap-1.5 text-neutral-300">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
+                    🇨🇦 CANADA TIME: {canadaTime.timeString}
+                  </span>
+                  <span className="text-amber-400 font-bold">AUG 15 • TODAY</span>
                 </div>
 
                 {/* Month Selector Controls */}
@@ -236,6 +247,9 @@ export default function FloatingCalendar() {
                       return <div key={`empty-${index}`} className="aspect-square" />;
                     }
 
+                    // Check if this date is today in Canada
+                    const isTodayCell = isDateTodayInCanada(currentYear, currentMonth, day);
+
                     // Check if this date has a registered event
                     const eventOnThisDay = EVENTS_CALENDAR_DATA.find(
                       (ev) => ev.year === currentYear && ev.month === currentMonth && ev.day === day
@@ -249,7 +263,9 @@ export default function FloatingCalendar() {
                         onClick={() => handleDayClick(day)}
                         className={`aspect-square text-xs font-mono flex flex-col items-center justify-center relative cursor-pointer select-none transition-all ${
                           isSelected
-                            ? 'bg-white text-black font-extrabold'
+                            ? 'bg-white text-black font-extrabold shadow-md'
+                            : isTodayCell
+                            ? 'bg-red-950/80 text-red-300 font-bold border-2 border-red-500/80'
                             : eventOnThisDay
                             ? 'bg-amber-500/10 text-amber-400 font-bold border border-amber-500/30 hover:bg-amber-500/20'
                             : 'hover:bg-white/5 text-neutral-300'
@@ -257,8 +273,13 @@ export default function FloatingCalendar() {
                       >
                         <span>{day}</span>
                         
+                        {/* Today indicator label */}
+                        {isTodayCell && !isSelected && (
+                          <span className="text-[8px] font-extrabold text-red-400 leading-none">TODAY</span>
+                        )}
+
                         {/* Event indicator dot */}
-                        {eventOnThisDay && !isSelected && (
+                        {eventOnThisDay && !isSelected && !isTodayCell && (
                           <span className="absolute bottom-1 w-1 h-1 rounded-full bg-amber-400" />
                         )}
                       </button>
@@ -267,7 +288,7 @@ export default function FloatingCalendar() {
                 </div>
 
                 {/* Event Detail card */}
-                <div className="border-t border-white/10 pt-4">
+                <div className="border-t border-white/10 pt-3">
                   <AnimatePresence mode="wait">
                     {selectedEvent ? (
                       <motion.div
@@ -276,20 +297,27 @@ export default function FloatingCalendar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="space-y-3"
+                        className="space-y-2.5"
                       >
                         <div className="flex items-center justify-between">
-                          <span className="text-[9px] font-mono font-bold bg-amber-500 text-black px-1.5 py-0.5 uppercase tracking-wider">
-                            {selectedEvent.status}
-                          </span>
+                          {isSelectedEventToday ? (
+                            <span className="text-[9px] font-mono font-extrabold bg-red-600 text-white px-2 py-0.5 uppercase tracking-wider flex items-center gap-1 shadow-sm">
+                              <Radio size={9} className="animate-pulse" />
+                              HAPPENING TODAY
+                            </span>
+                          ) : (
+                            <span className="text-[9px] font-mono font-bold bg-neutral-800 text-neutral-300 px-1.5 py-0.5 uppercase tracking-wider">
+                              {selectedEvent.status}
+                            </span>
+                          )}
                           <span className="text-[10px] font-mono text-neutral-400">
-                            {MONTH_NAMES[selectedEvent.month]} {selectedEvent.day}
+                            {MONTH_NAMES[selectedEvent.month]} {selectedEvent.day}, {selectedEvent.year}
                           </span>
                         </div>
                         <h4 className="font-serif font-bold text-sm text-white leading-tight">
                           {selectedEvent.title}
                         </h4>
-                        <div className="space-y-1.5 text-[11px] text-neutral-300">
+                        <div className="space-y-1 text-[11px] text-neutral-300">
                           <div className="flex items-center gap-1.5">
                             <Clock size={11} className="text-amber-400 shrink-0" />
                             <span>{selectedEvent.time}</span>
@@ -322,3 +350,4 @@ export default function FloatingCalendar() {
     </>
   );
 }
+

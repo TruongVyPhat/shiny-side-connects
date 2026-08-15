@@ -87,10 +87,14 @@ export default function Hero({ onNavigate }: HeroProps) {
         {/* Hero Content Section */}
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 md:py-36 w-full h-full flex flex-col justify-end z-10 grow">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-3.5 py-1.5 border border-white/20">
-              <span className="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white">
-                {siteText.hero.badgeText}
+            <div className="inline-flex flex-wrap items-center gap-2 bg-black/60 backdrop-blur-md px-3.5 py-1.5 border border-white/20">
+              <span className="w-2 h-2 rounded-full bg-red-400 animate-ping"></span>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-red-300 font-mono">
+                1 MEETUP TODAY IN CANADA (EDMONTON)
+              </span>
+              <span className="text-white/40 hidden sm:inline">•</span>
+              <span className="text-[10px] uppercase tracking-[0.15em] text-neutral-300 hidden sm:inline font-mono">
+                Full-Send August @ Tipsy Moose
               </span>
             </div>
 
